@@ -1,0 +1,448 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Saada Hack</title>
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.5.3/dist/css/bootstrap.min.css"
+    integrity="sha384-TX8t27EcRE3e/ihU7zmQxVncDAy5uIKz4rEkgIXeMed4M0jlfIDPvg6uqKI2xXr2" crossorigin="anonymous">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css" />
+  <link rel="stylesheet" href="./font-awesome-4.7.0/css/font-awesome.min.css">
+  <link rel="stylesheet" href="assets/css/style.css">
+  <style>
+    a {
+      text-decoration: none;
+    }
+
+    .fa {
+      color: #f84949;
+      font-weight: 800;
+      margin-top: 2%;
+      margin-right: 1.7%;
+    }
+
+    .data {
+      margin-top: 2%;
+    }
+
+    form {
+      margin: 0 auto;
+      display: table;
+      margin-bottom: 2%;
+    }
+
+    .contact-heading {
+      margin-bottom: 7%;
+    }
+
+    .contact-data {
+      width: 700px;
+      height: 45px;
+      outline: transparent;
+      border: none;
+      margin-bottom: 2%;
+      border-bottom: 2px solid black;
+      border-radius: 10px;
+      padding-left: 14px;
+    }
+
+    .contact-data:focus {
+
+      border-bottom: 2px solid #f84949;
+    }
+
+    .contact-data2 {
+      width: 700px;
+      height: 75px;
+      border-radius: 10px;
+      outline: transparent;
+      border: none;
+      padding-left: 14px;
+      margin-left: 0px !important;
+      border-bottom: 2px solid black;
+    }
+
+    .contact-data2:focus {
+      border-bottom: 2px solid #f84949;
+    }
+
+    button {
+      width: 100px;
+      height: 35px;
+      letter-spacing: 1px;
+      background-color: #f84949;
+      border: none;
+      border-radius: 4px;
+      color: white;
+      margin: 0 auto;
+      display: table;
+    }
+
+    button:hover {
+      background-color: white;
+      border: 2px solid #f84949;
+      border-radius: 4px;
+      color: #f84949;
+      font-weight: 700;
+    }
+
+    @media (max-width: 768px) {
+      .contact-data {
+        margin-left: 1%;
+        width: 420px;
+      }
+
+      .contact-data2 {
+        margin-left: 1%;
+        width: 420px;
+      }
+    }
+
+    .picture {
+
+      display: flex;
+      justify-content: space-evenly;
+      margin: 10%;
+      margin-bottom: 4%;
+    }
+
+    .img-with-text {
+      text-align: justify;
+      width: 100px;
+    }
+
+    .bmi {
+      display: block;
+      height: 400px;
+      margin: 0 auto;
+    }
+
+    .img-with-text img {
+      display: block;
+      margin: 0 auto;
+      height: 110px;
+    }
+
+    .arrow:hover {
+      color: #f84949 !important;
+    }
+
+    #thanks {
+      text-align: center;
+    }
+
+    @media (max-width:768px) {
+      body {
+        overflow-x: hidden;
+      }
+    }
+  </style>
+</head>
+
+<body>
+  <header>
+    <nav class="navbar navbar-expand-lg navbar-expand-md navbar-light fixed-top nav-normal" id="navbar"
+      style="width: 100vw !important;">
+      <a class="navbar-brand" href="#">Saada Hack</a>
+      <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#collapsed-content"
+        aria-controls="collapsed-content" aria-expanded="false" aria-label="Toggle Navigation" style="    float: right; margin: 0; padding: 0;
+        ">
+        <span class="navbar-toggler-icon"></span>
+      </button>
+      <div class="collapse navbar-collapse" style="justify-content: flex-end;" id="collapsed-content">
+        <ul class="navbar-nav ">
+          <li class="nav-item">
+            <a class="nav-link" href="#">Home <span class="sr-only">(current)</span></a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="#ab">About</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="#contact">Contact</a>
+          </li>
+          <li class="nav-item dropdown">
+            <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown"
+              aria-haspopup="true" aria-expanded="false">
+              PROFILE
+            </a>
+            <div class="dropdown-menu" aria-labelledby="navbarDropdown">
+              <a class="dropdown-item" href="./signin.html">SIGN IN</a>
+              <div class="dropdown-divider"></div>
+              <a class="dropdown-item" href="./register.html">REGISTER</a>
+              <div class="dropdown-divider"></div>
+              <a class="dropdown-item" href="./membership.html">MEMBERSHIP</a>
+            </div>
+          </li>
+        </ul>
+      </div>
+    </nav>
+  </header>
+  <main id="main">
+    <div class="container-fluid">
+      <div class="row">
+        <div class="heading col-lg-6 col-sm-10 ml-sm-auto mr-sm-auto">
+          <img src="assets/images/banner-text.png" class="banner-text">
+        </div>
+        <img src="assets/images/banner-art.png" class="banner-img col-lg-6 col-sm-8 ml-sm-auto mr-sm-auto">
+      </div>
+
+
+    </div>
+  </main>
+  <div class="container-fluid" style="background-color: #fdfdfd; padding: 150px 0;">
+    <div class="container-fluid">
+      <h2 class="h2-responsive text-center about-heading">About <span style=" color: #f84949;">Us</span></h2>
+      <div class="container row about-container">
+        <div class="col-md-4 col-sm-6 about-card s-box ">
+          <div class="bar"></div>
+          <img alt="3"
+            src="https://downloads.healthcatalyst.com/wp-content/uploads/2016/10/EHR-vs-Data-Warehouse.png" /><br />
+          <h1>Paperless</h1>
+          <p>Its chain management, food grade, and temperature-controlled offers both long-term and short-term
+            warehousing
+            options with surveillance security</p>
+        </div>
+        <div class="col-md-4 col-sm-6 about-card s-box">
+          <div class="bar"></div>
+          <img alt="3"
+            src="https://lh3.googleusercontent.com/proxy/jghdFdp9EvCROg-gmj0ueveqFQL2htEuqRn8LOY2gT0S28AnKSTASr4FDh2TIbzsZ9kcsRcrI3LV9b2_rtihrDWPR_ah_Z9srIuzNVvkiVfOf9RB96siE_GZf6QlzCGe7hIPrz3CB4e3CA" /><br />
+          <h1>Biometric</h1>
+          <p>Its chain management, food grade, and temperature-controlled offers both long-term and short-term
+            warehousing
+            options with surveillance security</p>
+        </div>
+        <div class="col-md-4 col-sm-6 about-card s-box">
+          <div class="bar"></div>
+          <img alt="3"
+            src="https://www.kindpng.com/picc/m/198-1985147_pediatric-telemedicine-for-kids-doctor-online-icon-png.png"
+            style="border-radius: 50%;" /><br />
+          <h1>Appointment</h1>
+          <p>Its chain management, food grade, and temperature-controlled offers both long-term and short-term
+            warehousing
+            options with surveillance security</p>
+        </div>
+        <div class="col-md-4 col-sm-6 about-card s-box">
+          <div class="bar"></div>
+          <img alt="3"
+            src="https://cdn.iconscout.com/icon/free/png-256/health-fitness-care-safe-fresh-heart-1-4142.png" /><br />
+          <h1>SelfCare</h1>
+          <p>Its chain management, food grade, and temperature-controlled offers both long-term and short-term
+            warehousing
+            options with surveillance security</p>
+        </div>
+        <div class="col-md-4 col-sm-6 about-card s-box">
+          <div class="bar"></div>
+          <img alt="3"
+            src="https://www.pngkit.com/png/full/524-5245503_privacy-independent-filmmaker-project-logo.png" /><br />
+          <h1>Data Privacy</h1>
+          <p>Its chain management, food grade, and temperature-controlled offers both long-term and short-term
+            warehousing
+            options with surveillance security</p>
+        </div>
+        <div class="col-md-4 col-sm-6 about-card s-box">
+          <div class="bar"></div>
+          <img alt="3" src="https://www.flaticon.com/svg/static/icons/svg/504/504018.svg" /><br />
+          <h1>Updates</h1>
+          <p>Its chain management, food grade, and temperature-controlled offers both long-term and short-term
+            warehousing
+            options with surveillance security</p>
+        </div>
+
+      </div>
+    </div>
+  </div>
+
+  <div style="margin: 6% 0;">
+    <div class="basic-2">
+      <div class="container">
+        <div class="row">
+          <div class="col-lg-6">
+            <div class="image-container">
+              <img class="img-fluid future" src="./assets/images/fu.jpg" alt="alternative">
+            </div>
+          </div>
+          <div class="col-lg-6" id="reforms">
+            <div class="text-container">
+              <h1 class="h2-responsive ">Future<span style="color: #f84949;font-weight:bolder;"> Plans</span></h1>
+              <ul class="list-unstyled li-space-lg">
+                <li class="media">
+                  <i class="fa fa-stethoscope" aria-hidden="true"></i>
+                  <div class="media-body data"> Connecting, Chemists, Doctors and Patients altogether.
+                  </div>
+                </li>
+                <li class="media">
+                  <i class="fa fa-stethoscope" aria-hidden="true"></i>
+                  <div class="media-body data">
+                    Least discrepancy of the harmful drugs/medicines. </div>
+                </li>
+                <li class="media">
+                  <i class="fa fa-stethoscope" aria-hidden="true"></i>
+                  <div class="media-body data"> Making things easier for doctors & patients.
+                  </div>
+                </li>
+                <li class="media">
+                  <i class="fa fa-stethoscope " aria-hidden="true"></i>
+                  <div class="media-body data">Regular updates to patients regarding their health.
+                  </div>
+                </li>
+                <li class="media">
+                  <i class="fa fa-stethoscope" aria-hidden="true"></i>
+                  <div class="media-body data"> Suggestions for better maintaining health. </div>
+                </li>
+                <li class="media">
+                  <i class="fa fa-stethoscope" aria-hidden="true"></i>
+                  <div class="media-body data"> Creating a network for better future. </div>
+                </li>
+                <li class="media">
+                  <i class="fa fa-stethoscope" aria-hidden="true"></i>
+                  <div class="media-body data"> Giving regular fitness tips. </div>
+                </li>
+              </ul>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <div class="container-fluid" style="background-color: #f5f5f5; padding: 150px 0;">
+    <div class="basic-1" id="agenda">
+      <div class=" container">
+        <div class="row">
+          <div class="col-lg-6">
+            <div class="text-container" style="margin-top: 9%;">
+              <h1 class="h2-responsive text-center contact-heading">Want to Check your
+                <br /> <span style="font-weight:bolder;letter-spacing: 4px;font-size: 60px;">BMI ?</span></h1>
+              <p>
+                <a href="./bmi.html" style="text-decoration: none;"><button
+                    style="height: 50px;width: 200px;letter-spacing: 3px;">Click Here</button>
+                </a>
+              </p>
+
+            </div>
+          </div>
+          <div class="col-lg-6">
+            <div class="image-container">
+              <img class="img-fluid bmi" src="./assets/images/bmi.svg" alt="alternative">
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+  <div style="margin-bottom: 14%;">
+    <h5 class="h5-responsive text-center ">We Made It Simple For You</h5>
+    <h1 class="h1-responsive text-center" style="font-size: 60px;">How It<span style="color: #f84949;font-size: 63px;">
+        Works?</span></h1>
+    <div class="picture">
+      <div class="img-with-text">
+        <img src="./assets/images/img-01-3.png" />
+        <h5>E-health</h5>
+      </div>
+      <div class="img-with-text">
+        <img src="./assets/images/img-02-4.png" />
+        <h5 style="width: 200px;"> Updates</h5>
+      </div>
+      <div class="img-with-text">
+        <img src="./assets/images/img-03-3.png" />
+        <h5 style="width: 200px;">Fitness Tips</h5>
+      </div>
+    </div>
+  </div>
+
+  <div id="contact">
+    <form>
+      <h1 class="h2-responsive text-center contact-heading">How can we <span
+          style="color: #f84949;font-weight:bolder;">Help you?</span></h1>
+      <input type="text" placeholder="Name" class="contact-data" id="username" required /><br />
+      <input type="email" placeholder="Email" class="contact-data" required />
+      <br />
+      <label for="address"><textarea type="text" placeholder="Message" class="contact-data2" required></textarea>
+      </label>
+      <br />
+    </form>
+    <button onclick="send()">Send</button>
+    <p id="thanks"></p>
+  </div>
+  <div style="margin-bottom: 3%;margin-top: 9%;">
+    <h1 class="h1-responsive text-center" style="font-size: 60px;">Our Team</h1>
+    <div class="picture" style="margin-top: 5%;">
+
+      <div class="img-with-text">
+        <img src="./assets/images/man-avatars.jpg" style="height: 160px;" />
+        <h5 class="h5-responsive " style="width: 200px;">Harshit Sharma</h5>
+        <h1 class=" h1-responsive " style="width: 200px;margin-left: 22%;"><a href="https://github.com/icoderharshit"><i
+              class="fa fa-github" aria-hidden="true"></i> </a><a href="https://linkedin.com/in/iharshitsharma"><i
+              class="fa fa-linkedin-square" aria-hidden="true"></i></a>
+        </h1>
+      </div>
+      <div class="img-with-text ">
+        <img src="./assets/images/woman-avatars.jpg" style="height: 160px;margin-left: 6px;" />
+        <h5 class="h5-responsive " style="width: 200px;">Bhavika Malhotra</h5>
+
+        <h1 class="h1-responsive" style="width: 200px;margin-left: 28%;"><a
+            href="https://github.com/ibhavikamalhotra"><i class="fa fa-github" aria-hidden="true"></i></a> <a
+            href="https://linkedin.com/in/ibhavikamalhotra"><i class="fa fa-linkedin-square" aria-hidden="true"></i></a>
+        </h1>
+      </div>
+      <div class="img-with-text">
+        <img src="./assets/images/man-avatars.jpg" style="height: 160px;" />
+        <h5 class="h5-responsive " style="width: 200px;margin-left: 17%;">Akshit Garg</h5>
+        <h1 class=" h1-responsive " style="width: 200px;margin-left: 28%;"><i class="fa fa-github"
+            aria-hidden="true"></i> <i class="fa fa-linkedin-square" aria-hidden="true"></i></h1>
+      </div>
+    </div>
+  </div>
+  </section>
+
+  <footer class="footer">
+    <div class="footer-left">
+      <img src="/public/images/logo.png" alt="">
+      <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Sint quis aliquam voluptatem, voluptatibus deleniti
+        repellendus velit possimus tempore? Non aspernatur nihil nesciunt numquam eum aut architecto quia ut culpa
+        aliquid!</p>
+    </div>
+    <ul class="footer-right">
+      <li>
+        <h2>Links</h2>
+        <ul class="box">
+          <li><a href="/index.html">Home</a></li>
+          <li><a href="/about.html">About Us</a></li>
+          <li><a href="/workwithus.html">Work With Us</a></li>
+          <li><a href="/contact.html">Contact Us</a></li>
+        </ul>
+      </li>
+      <li class="features">
+        <h2>Links</h2>
+        <ul class="box">
+          <li><a href="#">Privacy Policy</a></li>
+          <li><a href="#">Disclaimer</a></li>
+          <li><a href="#">Terma and Conditions</a></li>
+        </ul>
+      </li>
+      <li>
+        <h2>Address</h2>
+        <ul class="box">
+          <li><a href="#">Contact No. </a></li>
+          <li><a href="#">209-988-8310</a></li>
+          <li><a href="#">209-924-9497</a></li>
+          <li><a href="#">425-598-3295</a></li>
+          <li><a href="#">sample@gmail.com</a></li>
+        </ul>
+      </li>
+    </ul>
+    <div class="footer-bottom">
+      <p>All Right reserved</p>
+    </div>
+  </footer>
+
+</body>
+
+<script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"
+  integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj" crossorigin="anonymous"></script>
+<script src="assets/js/script.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@4.5.3/dist/js/bootstrap.bundle.min.js"
+  integrity="sha384-ho+j7jyWK8fNQe+A12Hb8AhRq26LrZ/JpcUGGOn+Y7RsweNrtN/tE3MoK7ZeZDyx" crossorigin="anonymous"></script>
+
+</html>
