@@ -46,7 +46,7 @@
         </label><br />
         <label for="lname"><input type="text" placeholder="Last Name" name="lname" id="lname" required />
         </label><br />
-        <label> Registering as :</label> <br>
+        <label id="reglab"> Registering as :</label> <br>
         <select id="typee">
           <option name="drop" value="Not Selected">Select</option>
           <option name="drop" value="Chemist">Chemist</option>
@@ -75,8 +75,12 @@
         <label for="state"><input type="text" placeholder="State" name="state" id="state" required />
         </label><br />
 
+        <label for="age"><input type="number" placeholder="Age" min="1" max="100" name="age" id="age" required />
+        </label><br />
         <label for="birthdate"><input type="date" title="Date of Birth" name="dob" id="dob"
             style="color: rgb(110, 110, 110);" required />
+        </label><br />
+        <label for="bgroup"><input type="text" placeholder="Blood Group" name="bgroup" id="bgroup" required />
         </label><br />
         <button class="d-block ml-auto mr-auto mt-3 btn btn-outline-danger btn-md" onclick="RegisterUser()">
           Register</button>
@@ -112,6 +116,8 @@
       var state = document.getElementById('state').value;
       var dob = document.getElementById('dob').value;
       var sel = document.getElementById('typee');
+      var age = document.getElementById('age').value;
+      var bgroup = document.getElementById('bgroup').value;
       function getSelectedOption(sel) {
         var opt;
         for (var i = 0, len = sel.options.length; i < len; i++) {
@@ -144,7 +150,10 @@
           Gender: selectedGender,
           City: city,
           State: state,
-          DOB: dob
+          DOB: dob,
+          Age: age,
+          BloodGroup: bgroup
+
         });
         sendVerificationEmail();
 
@@ -153,7 +162,7 @@
 
         var errorcode = error.code;
         var errormsg = error.message;
-
+        alert("Error: " + errorcode + ", " + errormsg);
       });
 
       const auth = firebase.auth();
