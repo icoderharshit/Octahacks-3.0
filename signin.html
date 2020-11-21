@@ -1,0 +1,202 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Sign In</title>
+    <style>
+        body{
+            background-image: url(./assets/images/sign-in.png);
+        background-repeat: no-repeat;
+        height:630px;
+       
+        }
+     
+#box{
+    height:450px;
+    width: 450px;
+    background-color:rgb(255, 255, 255);
+    margin-right: auto;
+    margin-left: auto;
+    border-radius: 1.4%;  
+}
+#heading{
+    text-align: center;
+   padding-top: 20px;
+   font-family: "Avenir Next", "Helvetica Neue", Helvetica, Arial, sans-serif;
+   font-size:25px ;
+   display: block;
+   font-weight: 400;
+   margin-top:20% ;
+
+}
+button{
+    outline: none;
+    background-color: #f84949;
+    
+    font-size:15px ;
+   height: 40px;
+   width: 130px;
+   letter-spacing: 2px;
+   color: white;
+   border-color: transparent;
+}
+#font{
+    color: gray;
+    font-weight:200;
+    padding-left:25px;
+    font-family: "Avenir Next", "Helvetica Neue", Helvetica, Arial, sans-serif ;
+font-size: 15px;
+}
+#button{
+   font:center;
+   padding:40px;
+   text-align: center;
+   font-size: 15px;
+   
+}
+
+input{
+    padding-left: 12px;
+    background-color: rgb(247, 247, 247);
+    border : wheat;
+    width: 370px;
+ margin-top: 10px ;
+ margin-bottom: 12px ;
+    height: 40px;
+    border-radius:5px;
+    font-size: 15px;
+    font-weight: 500;
+    color: rgb(109, 106, 106);
+}
+select{
+    padding-left: 12px;
+    background-color: rgb(247, 247, 247);
+    border : wheat;
+    width: 380px;
+ margin-top: 12px ;
+ margin-bottom: 12px ;
+    height: 44px;
+    border-radius:5px;
+    font-size: 15px;
+    font-weight: 500;
+    color: rgb(109, 106, 106);
+}
+
+#forgot{
+    float:right;
+    margin-right: 40px;
+    font-size: 14px;
+ font-family: "Avenir Next", "Helvetica Neue", Helvetica, Arial, sans-serif;
+ font-weight:400;
+}
+button:hover{
+    cursor: pointer;
+ background-color: white;
+ outline:2px solid #f84949;
+ color:#f84949 ;
+font-weight: 600;
+}
+
+input[type="text"]:focus{
+    outline: none;
+    border-bottom: 1px solid #f84949;
+
+}
+input[type="password"]:focus{
+    outline: none;
+    border-bottom: 1px solid #f84949;
+}
+#newacc{
+    font-size: 14px;
+ font-family: "Avenir Next", "Helvetica Neue", Helvetica, Arial, sans-serif;
+ font-weight:400;
+}
+
+a{
+    text-decoration: none;
+}
+#forgot:hover,#newacc:hover{
+    text-decoration: underline;
+}
+    </style>
+</head>
+<body>
+   
+    
+       
+<div id="box">
+     <div id="heading">
+    Sign In
+    </div>
+    <br>
+    <div id="font">
+       <label>Email</label>
+        <br>
+        <input type="text" id="email" name="email">
+        <br>
+        <!-- <label> Email</label>
+        <br>
+        <input type="text"> -->
+        
+      <label> Password</label> 
+        <br>
+        <input type="password" id="password" name="password">
+        <br>
+        <label>  Login as :</label> <br>
+       <select>
+        <option class="drop" value="Not Selected">Select</option>
+        <option class="drop" value="Chemist">Chemist</option>
+        <option class="drop" value="Doctor">Doctor</option>
+        <option class="drop" value="Patient">Patient</option>
+       </select>
+       <br/>
+        <span id="newacc"><a href="./register.html" style="   color: rgb(109, 106, 106);">
+        Don't have an account yet ?</a>
+        </span>
+        <span id="forgot"><a href="./reset.html" style="   color: rgb(109, 106, 106);">
+            Forgot password ?</a>
+        </span>
+    </div>
+        <div id="button">
+        <button onclick="LoginUser()"> Sign In</button></div>
+       </div>
+    
+    <script src="https://www.gstatic.com/firebasejs/8.0.0/firebase-app.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/8.0.0/firebase-auth.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/8.0.0/firebase-database.js"></script>
+    <script>
+      var firebaseConfig = {
+         apiKey: "AIzaSyAs5tsHHmTFBKjTRSoJS42OJC13helmTq0",
+         authDomain: "saadahack.firebaseapp.com",
+         databaseURL: "https://saadahack.firebaseio.com",
+         projectId: "saadahack",
+         storageBucket: "saadahack.appspot.com",
+         messagingSenderId: "702033344107",
+         appId: "1:702033344107:web:01424d2231f7671e30632e",
+         measurementId: "G-D6K461P8SK"
+       };
+       // Initialize Firebase
+       firebase.initializeApp(firebaseConfig);
+    
+       function LoginUser(){
+   var email=document.getElementById('email').value;
+   var password=document.getElementById('password').value;
+   firebase.auth().signInWithEmailAndPassword(email,password).then(function(){
+alert("Logged in Successfuly !");
+
+    var id=firebase.auth().currentUser.uid;
+    window.location.replace("/Saada-Hack/profile.html");
+    localStorage.setItem('id',id);
+    
+   }).catch(function(error){
+
+    var errorCode=error.code;
+    var errorMsg=error.message;
+
+   });
+  }
+     
+     </script>
+</body>
+</html>
