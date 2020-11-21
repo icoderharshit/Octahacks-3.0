@@ -1,0 +1,248 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+      <meta charset="UTF-8">
+      <meta name="viewport" content="width=device-width, initial-scale=1.0">
+      <meta http-equiv="X-UA-Compatible" content="ie=edge">
+      <title>Password Reset</title>
+      <!-- <link rel="shortcut icon" href="favicon.png" type="image/x-icon"> -->
+  </head>
+  <style>
+    * {
+    padding: 0;
+    margin: 0;
+    font-family: 'Montserrat Medium'
+}
+
+main {
+    width: 100vw
+}
+
+.container,
+.feedbackContainer,
+main {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center
+}
+
+.container {
+    position: absolute;
+    left: 50%;
+    top: 50%;
+    transform: translate(-50%, -50%);
+}
+
+fieldset, .feedbackContainer {
+    border: rgb(192,192,192,0.1) 1px solid;
+    height: 340px;
+    box-shadow: 0px 0px 5px 0px rgba(0,0,0,0.12)
+}
+
+input[type = "email"] {
+    width: 340px;
+    margin-top: 8px;
+    padding: 2px 6px;
+    border: none;
+    background-color: #f7f7f7;
+    height: 40px;
+    outline-color: #2196f3;
+    font-size: 1rem
+}
+
+button {
+    float: right;
+    margin: 20px 47px 0px 0px;
+    padding: 10px 20px;
+    border: 1px solid #2196f3;
+    float: right;
+    background-color: #2196f3;
+    color: white;
+    cursor: pointer
+}
+
+.container div {
+    margin: 10px 40px;
+    position: relative
+}
+
+img {
+    width: 100px;
+    height: 100px;
+    margin: auto;
+    display: block
+}
+
+.reset-container div:first-of-type {   
+    width: 340px;
+    margin-top: 50px;
+}
+
+label {
+    position: absolute;
+    top: 56%;
+    left: 6px;
+    color: #505050
+}
+
+.focused-field {
+    animation-name: gainFocus;
+    animation-fill-mode: forwards;
+    animation-duration: 0.15s;
+    animation-timing-function: ease-out
+}
+
+@keyframes gainFocus {
+    0% {
+        top: 56%;
+        left: 6px;
+        color: #505050;
+        font-size: 1rem
+    }
+    100% {
+        top: 0%;
+        left: 0px;
+        color: #2196f3;
+        font-size: 0.9rem
+    }
+}
+
+.unfocused-field {
+    animation-name: loseFocus;
+    animation-fill-mode: forwards;
+    animation-duration: 0.15s;
+    animation-timing-function: ease-out
+}
+
+@keyframes loseFocus {
+    0% {
+        top: 0%;
+        left: 0px;
+        color: #2196f3;
+        font-size: 0.9rem
+    }
+    100% {
+        top: 56%;
+        left: 6px;
+        color: #505050;
+        font-size: 1rem
+    }
+}
+
+.initial-focused-field {
+    top: 0%;
+    left: 0px;
+    color: #2196f3;
+    font-size: 0.9rem
+}
+
+.initial-unfocused-field {
+    top: 56%;
+    left: 6px;
+    color: #505050;
+    font-size: 1rem
+}
+
+.feedbackContainer {
+    height: 300px;
+    width: 300px;
+    position: fixed;
+    left: 50%;
+    top: 50%;
+    transform: translate(-50%, -50%);
+    background-color: #fff;
+    display: none 
+}
+
+.feedbackIcon {
+    width: 70px;
+    height: 70px;
+    margin-bottom: 20px;
+}
+
+.success .feedbackIcon {
+    background-image: url('./assets/images/success.svg');
+}
+
+.failure .feedbackIcon {
+    background-image: url('./assets/images/failure.svg');
+}
+  </style>
+  <body>
+      <main>
+        <section class="container reset-container">
+          <fieldset>
+            <div>
+              <img src="./assets/images/reset.svg">
+            
+            </div>
+            <div>
+              <label for="mail">Email</label> <br>
+              <input type="email" id="mail" name="mail"/>
+            </div>
+            <button id="resetPassword">Confirm</button>
+          </fieldset>
+      </section>
+      <div class="feedbackContainer success">
+        <div class="feedbackIcon"></div>
+        <p class="feedbackMessage">Signed up Successfully</p>
+      </div>
+      <div class="feedbackContainer failure">
+        <div class="feedbackIcon"></div>
+        <p class="feedbackMessage">Signing up failed</p>
+      </div>
+    </main> 
+    <script src="https://www.gstatic.com/firebasejs/8.0.0/firebase-app.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/8.0.0/firebase-auth.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/8.0.0/firebase-database.js"></script>
+    <script>
+    var firebaseConfig = {
+     apiKey: "AIzaSyAs5tsHHmTFBKjTRSoJS42OJC13helmTq0",
+     authDomain: "saadahack.firebaseapp.com",
+     databaseURL: "https://saadahack.firebaseio.com",
+     projectId: "saadahack",
+     storageBucket: "saadahack.appspot.com",
+     messagingSenderId: "702033344107",
+     appId: "1:702033344107:web:01424d2231f7671e30632e",
+     measurementId: "G-D6K461P8SK"
+   };
+  
+   firebase.initializeApp(firebaseConfig);
+   const mailField = document.getElementById('mail');
+const labels = document.getElementsByTagName('label');
+const resetPassword = document.getElementById('resetPassword');
+const successModal = document.querySelector('.success');
+const failureModal = document.querySelector('.failure');
+
+const auth = firebase.auth();
+
+
+auth.useDeviceLanguage();
+
+const resetPasswordFunction = () => {
+    const email = mailField.value;
+
+    auth.sendPasswordResetEmail(email)
+    .then(() => {
+        console.log('Password Reset Email Sent Successfully!');
+    })
+    .catch(error => {
+        console.error(error);
+    })
+}
+
+
+resetPassword.addEventListener('click', resetPasswordFunction);
+
+mailField.addEventListener('focus', () => {
+    labels.item(0).className = "focused-field";
+});
+
+mailField.addEventListener('blur', () => {
+    if(!mailField.value)
+        labels.item(0).className = "unfocused-field";
+});
+  </script>   
+  </body>
+</html>
