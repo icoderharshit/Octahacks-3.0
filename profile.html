@@ -16,6 +16,8 @@
       </div>
       <button id="logOut">Logout</button>
       <button id="modifyAccount">Modify Account</button>
+      <button id="redirect"></button>
+
     </div>
   </section>
   <script src="https://www.gstatic.com/firebasejs/8.0.0/firebase-app.js"></script>
@@ -39,7 +41,15 @@
     var userId = localStorage.getItem('id');
     firebase.database().ref('Users/' + userId).on('value', function (snapshot) {
       var name = (snapshot.val() && snapshot.val().FirstName) + " " + (snapshot.val() && snapshot.val().LastName);
+      var type = (snapshot.val() && snapshot.val().Type);
       console.log(snapshot.val())
+      if (type == "Patient")
+        document.getElementById("redirect").innerHTML = '<a href="./patient.html">Patient Profile</a>';
+      else if (type == "Doctor")
+        document.getElementById("redirect").innerHTML = '<a href="./doctor.html">Make Prescription</a>';
+      else
+        document.getElementById("redirect").innerHTML = '<a href="./sample.html">Get Prescription</a>';
+
       //  var tele=(snapshot.val() && snapshot.val().Phone);
       //  var address=(snapshot.val() && snapshot.val().Address);
       //  var gender=(snapshot.val() && snapshot.val().Gender);
