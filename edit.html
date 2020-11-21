@@ -1,55 +1,57 @@
 <!DOCTYPE html>
 <html lang="en">
-  <head>
-      <meta charset="UTF-8">
-      <meta name="viewport" content="width=device-width, initial-scale=1.0">
-      <meta http-equiv="X-UA-Compatible" content="ie=edge">
-      <title>Edit</title>
-    
-      <link rel="stylesheet" href="./assets/css/edit.css">
-  </head>
-  <body>
-    <main>
-      <section class="container edit-container">
-        <fieldset>
-          <div>
-            <img src="./assets/images/edit.svg">
-         
-          </div>
-          <div>
-            <label for="mail">Email</label> <br>
-            <input type="email" id="mail" name="mail"/>
-          </div>
-          <div>
-            <label for="password">Password</label> <br>
-            <input type="password" id="password" name="password"/> <br>
-          </div>
-          <div>
-            <label for="displayName">Display name</label> <br>
-            <input type="text" id="displayName" name="displayName"/> <br>
-          </div>
-          <div>
-            <label for="photo">Url of picture</label> <br>
-            <input type="url" id="photo"/> <br>
-          </div>
-          <button id="edit">Confirm</button>
-          <button id="back">Back</button>
-          <button id="delete">Delete Account</button>    
-        </fieldset>
-      </section>
-      <div class="feedbackContainer success">
-        <div class="feedbackIcon"></div>
-        <p class="feedbackMessage">Signed up Successfully</p>
-      </div>
-      <div class="feedbackContainer failure">
-        <div class="feedbackIcon"></div>
-        <p class="feedbackMessage">Signing up failed</p>
-      </div>
-    </main>
-    <script src="https://www.gstatic.com/firebasejs/8.0.0/firebase-app.js"></script>
-    <script src="https://www.gstatic.com/firebasejs/8.0.0/firebase-auth.js"></script>
-    <script src="https://www.gstatic.com/firebasejs/8.0.0/firebase-database.js"></script>
-    <script> var firebaseConfig = {
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>Edit</title>
+
+  <link rel="stylesheet" href="./assets/css/edit.css">
+</head>
+
+<body>
+  <main>
+    <section class="container edit-container">
+      <fieldset>
+        <div>
+          <img src="./assets/images/edit.svg">
+
+        </div>
+        <div>
+          <label for="mail">Email</label> <br>
+          <input type="email" id="mail" name="mail" />
+        </div>
+        <div>
+          <label for="password">Password</label> <br>
+          <input type="password" id="password" name="password" /> <br>
+        </div>
+        <div>
+          <label for="displayName">Display name</label> <br>
+          <input type="text" id="displayName" name="displayName" /> <br>
+        </div>
+        <div>
+          <label for="photo">Url of picture</label> <br>
+          <input type="url" id="photo" /> <br>
+        </div>
+        <button id="edit">Confirm</button>
+        <button id="back">Back</button>
+        <button id="delete">Delete Account</button>
+      </fieldset>
+    </section>
+    <div class="feedbackContainer success">
+      <div class="feedbackIcon"></div>
+      <p class="feedbackMessage">Signed up Successfully</p>
+    </div>
+    <div class="feedbackContainer failure">
+      <div class="feedbackIcon"></div>
+      <p class="feedbackMessage">Signing up failed</p>
+    </div>
+  </main>
+  <script src="https://www.gstatic.com/firebasejs/8.0.0/firebase-app.js"></script>
+  <script src="https://www.gstatic.com/firebasejs/8.0.0/firebase-auth.js"></script>
+  <script src="https://www.gstatic.com/firebasejs/8.0.0/firebase-database.js"></script>
+  <script> var firebaseConfig = {
       apiKey: "AIzaSyAs5tsHHmTFBKjTRSoJS42OJC13helmTq0",
       authDomain: "saadahack.firebaseapp.com",
       databaseURL: "https://saadahack.firebaseio.com",
@@ -59,8 +61,9 @@
       appId: "1:702033344107:web:01424d2231f7671e30632e",
       measurementId: "G-D6K461P8SK"
     };
-   
+
     firebase.initializeApp(firebaseConfig);</script>
-    <script src="./assets/js/edit.js"></script>
-  </body>
+  <script src="./assets/js/edit.js"></script>
+</body>
+
 </html>
