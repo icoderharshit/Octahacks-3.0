@@ -84,8 +84,8 @@
                     </div>
                     <ul class="list-group list-group-flush">
 
-                        <li class="list-group-item">Age</li>
-                        <li class="list-group-item">Gender</li>
+                        <li class="list-group-item">Age : <span id="age"></span></li>
+                        <li class="list-group-item">Gender : <span id="gender"></span></li>
 
                     </ul>
 
@@ -171,11 +171,15 @@
             userId = document.querySelector("#patientId").value;
             firebase.database().ref('Users/' + userId).on('value', function (snapshot) {
                 var name = (snapshot.val() && snapshot.val().FirstName) + " " + (snapshot.val() && snapshot.val().LastName);
+                var gender = (snapshot.val() && snapshot.val().Gender);
+
+
+                var age = (snapshot.val() && snapshot.val().Age);
                 console.log(snapshot.val()[Object.keys(snapshot.val())[0]]);
-                var medicine1 = (snapshot.val()[Object.keys(snapshot.val())[Object.keys(snapshot.val()).length - 10]].Medicine1);
-                var medicine2 = (snapshot.val()[Object.keys(snapshot.val())[Object.keys(snapshot.val()).length - 10]].Medicine2);
-                var medicine3 = (snapshot.val()[Object.keys(snapshot.val())[Object.keys(snapshot.val()).length - 10]].Medicine3);
-                var medicine4 = (snapshot.val()[Object.keys(snapshot.val())[Object.keys(snapshot.val()).length - 10]].Medicine4);
+                var medicine1 = (snapshot.val()[Object.keys(snapshot.val())[Object.keys(snapshot.val()).length - 12]].Medicine1);
+                var medicine2 = (snapshot.val()[Object.keys(snapshot.val())[Object.keys(snapshot.val()).length - 12]].Medicine2);
+                var medicine3 = (snapshot.val()[Object.keys(snapshot.val())[Object.keys(snapshot.val()).length - 12]].Medicine3);
+                var medicine4 = (snapshot.val()[Object.keys(snapshot.val())[Object.keys(snapshot.val()).length - 12]].Medicine4);
 
                 //  var address=(snapshot.val() && snapshot.val().Address);
                 //  var gender=(snapshot.val() && snapshot.val().Gender);
@@ -183,6 +187,9 @@
                 //  var state=(snapshot.val() && snapshot.val().State);
                 //  var dob=(snapshot.val() && snapshot.val().DOB);
                 document.getElementById('displayNameHolder').innerHTML = name;
+
+                document.getElementById('age').innerHTML = age;
+                document.getElementById('gender').innerHTML = gender;
                 document.getElementById('med1').innerHTML = medicine1;
                 document.getElementById('med2').innerHTML = medicine2;
                 document.getElementById('med3').innerHTML = medicine3;
