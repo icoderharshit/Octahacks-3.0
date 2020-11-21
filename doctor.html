@@ -1,0 +1,213 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.5.3/dist/css/bootstrap.min.css"
+        integrity="sha384-TX8t27EcRE3e/ihU7zmQxVncDAy5uIKz4rEkgIXeMed4M0jlfIDPvg6uqKI2xXr2" crossorigin="anonymous">
+    <link rel="stylesheet" href="./assets/css/sample.css">
+    <link rel="stylesheet" href="./assets/css/style.css">
+</head>
+
+<body>
+    <div class="popup">
+        <div class="container">
+            <label for="patientId" class="pop">Patient Id</label>
+            <input type="text" id="patientId" class="pop form-control">
+            <button id="submit" class="pop btn btn-success">Submit</button>
+        </div>
+
+    </div>
+    <header>
+        <nav class="navbar navbar-expand-lg navbar-expand-md navbar-light fixed-top nav-black" id="navbar"
+            style="width: 100vw !important;">
+            <a class="navbar-brand" href="#">Saada Hack</a>
+            <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#collapsed-content"
+                aria-controls="nav" aria-expanded="false" aria-label="Toggle navigation">
+                <span class="navigation__icon">
+                    &nbsp;
+                </span>
+                </label>
+            </button>
+            <div class="collapse navbar-collapse" style="justify-content: flex-end;" id="collapsed-content">
+                <ul class="navbar-nav ">
+                    <li class="nav-item">
+                        <a class="nav-link nav-white" href="#">Home <span class="sr-only">(current)</span></a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link nav-white" href="#ab">About</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link nav-white" href="#contact">Contact</a>
+                    </li>
+                    <li class="nav-item dropdown">
+                        <a class="nav-link dropdown-toggle nav-white" href="#" id="navbarDropdown" role="button"
+                            data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                            PROFILE
+                        </a>
+                        <div class="dropdown-menu" aria-labelledby="navbarDropdown">
+                            <a class="dropdown-item" href="./signin.html">SIGN IN</a>
+                            <div class="dropdown-divider"></div>
+                            <a class="dropdown-item" href="./register.html">REGISTER</a>
+                            <div class="dropdown-divider"></div>
+                            <a class="dropdown-item" href="./membership.html">MEMBERSHIP</a>
+                        </div>
+                    </li>
+                </ul>
+            </div>
+        </nav>
+    </header>
+    <main>
+        <div class="container">
+            <h2 class="h2-responsive text-center about-heading sample">Medical<span style=" color: #f84949;">
+                    Records</span>
+            </h2>
+        </div>
+
+        <div class="container row profile-container">
+
+            <div class="col-lg-4">
+                <div class="card" style="width: 18rem;">
+                    <img src="https://www.teamunify.com/efslss/UserFiles/Image/QuickUpload/male_086544.png"
+                        class="card-img-top profile-image" alt="...">
+                    <div class="card-body profile-data">
+                        <h5 class="card-title" style="text-align: center;" id="displayNameHolder">Patient Name</h5>
+                        <p class="card-text">Blood Group<br>Disease 1<br>Disease 2<br>Special Condition</p>
+                    </div>
+                    <ul class="list-group list-group-flush">
+                        <li class="list-group-item">Age</li>
+                        <li class="list-group-item">Gender</li>
+
+                    </ul>
+                    <div class="card-body">
+                        <a href="#" class="card-link">Complete info</a>
+                    </div>
+                </div>
+            </div>
+            <div class="col-lg-8 row profile-card-container">
+                <h2>&nbsp; New Prescription</h2>
+                <div class="container">
+                    <div class="form-group">
+                        <label for="medicine1">Medicine 1</label>
+                        <input type="text" class="form-control" id="medicine1">
+                    </div>
+                    <div class="form-group">
+                        <label for="medicine2">Medicine 2</label>
+                        <input type="text" class="form-control" id="medicine2">
+                    </div>
+                    <div class="form-group">
+                        <label for="medicine3">Medicine 3</label>
+                        <input type="text" class="form-control" id="medicine3">
+                    </div>
+                    <div class="form-group">
+                        <label for="medicine4">Medicine 4</label>
+                        <input type="text" class="form-control" id="medicine4">
+                    </div>
+
+                </div>
+
+                <div class="container buttonGroup">
+                    <button type="button" class="btn btn-info" id="subPrescription">Upload Prescription</button>
+                </div>
+
+            </div>
+
+        </div>
+        <div class="container buttonGroup">
+            <button type="button" class="btn btn-info">Upload Prescription</button>
+        </div>
+
+    </main>
+
+
+    <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"
+        integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj"
+        crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@4.5.3/dist/js/bootstrap.bundle.min.js"
+        integrity="sha384-ho+j7jyWK8fNQe+A12Hb8AhRq26LrZ/JpcUGGOn+Y7RsweNrtN/tE3MoK7ZeZDyx"
+        crossorigin="anonymous"></script>
+    <script src="https://www.gstatic.com/firebasejs/8.0.0/firebase-app.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/8.0.0/firebase-auth.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/8.0.0/firebase-database.js"></script>
+    <script>
+        var firebaseConfig = {
+            apiKey: "AIzaSyAs5tsHHmTFBKjTRSoJS42OJC13helmTq0",
+            authDomain: "saadahack.firebaseapp.com",
+            databaseURL: "https://saadahack.firebaseio.com",
+            projectId: "saadahack",
+            storageBucket: "saadahack.appspot.com",
+            messagingSenderId: "702033344107",
+            appId: "1:702033344107:web:01424d2231f7671e30632e",
+            measurementId: "G-D6K461P8SK"
+        };
+        firebase.initializeApp(firebaseConfig);
+    </script>
+    <script type="text/javascript">
+        var userId;
+        document.querySelector("#submit").addEventListener("click", function () {
+            userId = document.querySelector("#patientId").value;
+            // firebase.database().ref('/Users/' + userId).set({
+            //     FirstName: "Deepak",
+            //     LastName: "Singh",
+            //     Type: "Doctor",
+            //     Phone: "Tel",
+            //     Address: "Address",
+            //     Gender: "Male",
+            //     City: "city",
+            //     State: "state",
+            //     DOB: "dob",
+            //     Presc: 0
+            // });
+            firebase.database().ref('Users/' + userId).on('value', function (snapshot) {
+
+                var name = (snapshot.val() && snapshot.val().FirstName) + " " + (snapshot.val() && snapshot.val().LastName);
+
+
+                //  var tele=(snapshot.val() && snapshot.val().Phone);
+                //  var address=(snapshot.val() && snapshot.val().Address);
+                //  var gender=(snapshot.val() && snapshot.val().Gender);
+                //  var city=(snapshot.val() && snapshot.val().City);
+                //  var state=(snapshot.val() && snapshot.val().State);
+                //  var dob=(snapshot.val() && snapshot.val().DOB);
+                document.getElementById('displayNameHolder').innerHTML = name;
+                //  document.getElementById('lname').innerHTML=lname;
+                //  document.getElementById('phone').innerHTML=tele;
+                //  document.getElementById('address').innerHTML=address;
+                //  document.getElementById('gender').innerHTML=gender;
+                //  document.getElementById('city').innerHTML=city;
+                //  document.getElementById('state').innerHTML=state;
+                //  document.getElementById('dob').innerHTML=dob;
+            });
+            document.querySelector(".popup").style.display = "none";
+
+        })
+    </script>
+
+    <script>
+        document.querySelector("#subPrescription").addEventListener("click", function () {
+            var medicine1 = document.querySelector("#medicine1").value;
+            var medicine2 = document.querySelector("#medicine2").value;
+            var medicine3 = document.querySelector("#medicine3").value;
+            var medicine4 = document.querySelector("#medicine4").value;
+
+
+            firebase.database().ref('/Users/' + userId).push({
+                Medicine1: medicine1,
+                Medicine2: medicine2,
+                Medicine3: medicine3,
+                Medicine4: medicine4
+            });
+            firebase.database().ref('Users/' + userId).on('value', function (snapshot) {
+
+                console.log(snapshot.val());
+
+            });
+        })
+
+
+    </script>
+</body>
+
+</html>
