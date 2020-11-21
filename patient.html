@@ -1,344 +1,413 @@
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Saada Hack</title>
-    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.5.3/dist/css/bootstrap.min.css" integrity="sha384-TX8t27EcRE3e/ihU7zmQxVncDAy5uIKz4rEkgIXeMed4M0jlfIDPvg6uqKI2xXr2" crossorigin="anonymous">
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css"/>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.5.3/dist/css/bootstrap.min.css"
+        integrity="sha384-TX8t27EcRE3e/ihU7zmQxVncDAy5uIKz4rEkgIXeMed4M0jlfIDPvg6uqKI2xXr2" crossorigin="anonymous">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css" />
     <link rel="stylesheet" href="./font-awesome-4.7.0/css/font-awesome.min.css">
     <link rel="stylesheet" href="./assets/css/style.css">
     <title>Patient Profile</title>
     <style>
-        .dropdown-menu{
-          float: right;
-        }
-        .nav-link dropdown-toggle{
+        .dropdown-menu {
             float: right;
         }
-        .patient-info{
-            width:150pc
-        }
-        #leftbox { 
-                float:left;  
-                background-color: white; 
-                
-                width:600px;
-                height:250px;
-                margin-top: 40px;
-                margin-left:110px;
-                border-radius: 5px;
-                box-shadow: 0 0 0 2px #f84949 ;
-                
-                }
-                
 
-            #middlebox{ 
-                float:left;  
-                background-color:  #f84949; 
-                width:250px;
-                height:250px;
-                margin-top: 40px;
-                margin-left:50px;
-                border-radius: 5px; 
-                transition: transform .2s;
-            } 
-           
-            #rightbox{ 
-                float:left; 
-                background-color :  #f84949; 
-                width:250px;
-                height:250px;
-                margin-top: 40px;
-                margin-left: 50px;
-                border-radius: 5px; 
-                transition: transform .2s;
-            } 
-          
-            #centerbox{
-                width: 85%;
-                height:250px;
-                background-color: white;
-                border-radius: 25px;
-                box-shadow: 0 0 0 2px #f84949 ;
-                position: absolute;
-                top:500px;
-                left:70px;
-                border-radius: 25px;
-                
+        .nav-link dropdown-toggle {
+            float: right;
+        }
+
+        .patient-info {
+            width: 150pc
+        }
+
+        #leftbox {
+            margin: 0 auto;
+
+            background-color: white;
+            position: relative;
+            max-width: 500px;
+            border-radius: 5px;
+            box-shadow: 0 0 0 2px #f84949;
+
+        }
+
+
+        #middlebox {
+            max-width: 200px;
+            background-color: #f84949;
+            border-radius: 5px;
+            transition: transform .2s;
+        }
+
+        #rightbox {
+            max-width: 200px;
+            background-color: #f84949;
+            border-radius: 5px;
+            transition: transform .2s;
+        }
+
+        #centerbox {
+            margin: 100px auto;
+            background-color: white;
+            border-radius: 25px;
+            box-shadow: 0 0 0 2px #f84949;
+            padding-top: 20px;
+            border-radius: 25px;
+
+        }
+
+        #BP {
+            margin-right: 30px;
+            position: relative;
+            margin-bottom: 30px;
+            width: 250px;
+            height: 100px;
+            background-color: #f84949;
+            border-radius: 10px;
+            transition: transform .2s;
+        }
+
+        #BP:hover {
+            -ms-transform: scale(1.10);
+            /* IE 9 */
+            -webkit-transform: scale(1.10);
+            /* Safari 3-8 */
+            transform: scale(1.10);
+        }
+
+        #HeartRate {
+            position: relative;
+            margin-bottom: 30px;
+
+            width: 250px;
+            height: 100px;
+            background-color: #f84949;
+            border-radius: 10px;
+            transition: transform .2s;
+        }
+
+        #HeartRate:hover {
+            -ms-transform: scale(1.10);
+            /* IE 9 */
+            -webkit-transform: scale(1.10);
+            /* Safari 3-8 */
+            transform: scale(1.10);
+        }
+
+        #Glucose:hover {
+            -ms-transform: scale(1.10);
+            /* IE 9 */
+            -webkit-transform: scale(1.10);
+            /* Safari 3-8 */
+            transform: scale(1.10);
+        }
+
+        #BMI:hover {
+            -ms-transform: scale(1.10);
+            /* IE 9 */
+            -webkit-transform: scale(1.10);
+            /* Safari 3-8 */
+            transform: scale(1.10);
+        }
+
+        #BMI {
+            position: relative;
+
+            margin-right: 30px;
+            width: 250px;
+            height: 100px;
+            background-color: #f84949;
+            border-radius: 10px;
+            transition: transform .2s;
+        }
+
+        #Glucose {
+            position: relative;
+
+
+            width: 250px;
+            height: 100px;
+            background-color: #f84949;
+            border-radius: 10px;
+            transition: transform .2s;
+        }
+
+        button {
+            width: 100px;
+            height: 35px;
+            letter-spacing: 1px;
+            background-color: #f84949;
+            border: none;
+            border-radius: 4px;
+            color: white;
+            margin: 0 auto;
+            display: table;
+        }
+
+        button:hover {
+            background-color: white;
+            border: 2px solid #f84949;
+            border-radius: 4px;
+            color: #f84949;
+            font-weight: 700;
+
+        }
+
+        @media only screen and (max-width:990px) {
+            #leftbox {
+
+                margin-bottom: 50px;
             }
-           
-            #BP{
-                position: relative;
-                top:700px;
-                left:65px;
-                width:250px;
-                height:100px;
-                background-color: #f84949;
-                border-radius: 10px;
-                transition: transform .2s;
+
+            .buttonlinks {
+                margin-top: 50px;
             }
-            #BP:hover {
-                -ms-transform: scale(1.10); /* IE 9 */
-                -webkit-transform: scale(1.10); /* Safari 3-8 */
-                 transform: scale(1.10); 
-                } 
-            #HeartRate{
-                position: relative;
-                top:725px;
-                left:65px;
-                width:250px;
-                height:100px;
-                background-color: #f84949;
-                border-radius: 10px;
-                transition: transform .2s;
+
+            .buttonlinks a {
+                margin-bottom: 30px;
             }
-            #HeartRate:hover {
-                -ms-transform: scale(1.10); /* IE 9 */
-                -webkit-transform: scale(1.10); /* Safari 3-8 */
-                 transform: scale(1.10); 
-                } 
-                #Glucose:hover {
-                -ms-transform: scale(1.10); /* IE 9 */
-                -webkit-transform: scale(1.10); /* Safari 3-8 */
-                 transform: scale(1.10); 
-                } 
-                #BMI:hover {
-                -ms-transform: scale(1.10); /* IE 9 */
-                -webkit-transform: scale(1.10); /* Safari 3-8 */
-                 transform: scale(1.10); 
-                } 
-            #BMI{
-                position: relative;
-                top:500px;
-                left:340px;
-                width:250px;
-                height:100px;
-                background-color: #f84949;
-                border-radius: 10px;
-                transition: transform .2s;
-            }
-            #Glucose{
-                position: relative;
-                top:525px;
-                left:340px;
-                width:250px;
-                height:100px;
-                background-color: #f84949;
-                border-radius: 10px;
-                transition: transform .2s;
-            }
-            button{
-                width: 100px;
-                height: 35px;
-                letter-spacing: 1px;
-                background-color: #f84949;
-                 border: none;
-                 border-radius: 4px;
-                color: white;
-                margin: 0 auto;
-                display: table;
-                }
-            button:hover{
-                background-color: white;
-                 border:2px solid #f84949;
-                 border-radius: 4px;
-                 color: #f84949;
-                font-weight: 700;
-        
-            }
-            
-           
+        }
     </style>
 </head>
+
 <body>
     <nav class=" navbar navbar-expand-lg navbar-expand-md navbar-light fixed-top nav-black" id="navbar"
-    style="width: 100vw !important;">
-    <a class="navbar-brand" href="#">Saada Hack</a>
-    <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#collapsed-content"
-        aria-controls="nav" aria-expanded="false" aria-label="Toggle navigation">
-        <span class="navigation__icon">
-            &nbsp;
-        </span>
-        </label>
-    </button>
-    <div class="collapse navbar-collapse" style="justify-content: flex-end;" id="collapsed-content">
-        <ul class="navbar-nav ">
-            <li class="nav-item">
-                <a class="nav-link nav-white" href="#">Home <span class="sr-only">(current)</span></a>
-            </li>
-            <li class="nav-item">
-                <a class="nav-link nav-white" href="#ab">About</a>
-            </li>
-            <li class="nav-item">
-                <a class="nav-link nav-white" href="#contact">Contact</a>
-            </li>
-            <li class="nav-item dropdown">
-                <a class="nav-link dropdown-toggle nav-white" href="#" id="navbarDropdown" role="button"
-                    data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-                    PROFILE
-                </a>
-                <div class="dropdown-menu" aria-labelledby="navbarDropdown">
-                    <a class="dropdown-item" href="./signin.html">SIGN IN</a>
-                    <div class="dropdown-divider"></div>
-                    <a class="dropdown-item" href="./register.html">REGISTER</a>
-                    <div class="dropdown-divider"></div>
-                    <a class="dropdown-item" href="./membership.html">MEMBERSHIP</a>
+        style="width: 100vw !important;">
+        <a class="navbar-brand" href="#">Saada Hack</a>
+        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#collapsed-content"
+            aria-controls="nav" aria-expanded="false" aria-label="Toggle navigation">
+            <span class="navigation__icon">
+                &nbsp;
+            </span>
+            </label>
+        </button>
+        <div class="collapse navbar-collapse" style="justify-content: flex-end;" id="collapsed-content">
+            <ul class="navbar-nav ">
+                <li class="nav-item">
+                    <a class="nav-link nav-white" href="#">Home <span class="sr-only">(current)</span></a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link nav-white" href="#ab">About</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link nav-white" href="#contact">Contact</a>
+                </li>
+                <li class="nav-item dropdown">
+                    <a class="nav-link dropdown-toggle nav-white" href="#" id="navbarDropdown" role="button"
+                        data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                        PROFILE
+                    </a>
+                    <div class="dropdown-menu" aria-labelledby="navbarDropdown">
+                        <a class="dropdown-item" href="./signin.html">SIGN IN</a>
+                        <div class="dropdown-divider"></div>
+                        <a class="dropdown-item" href="./register.html">REGISTER</a>
+                        <div class="dropdown-divider"></div>
+                        <a class="dropdown-item" href="./membership.html">MEMBERSHIP</a>
+                    </div>
+                </li>
+            </ul>
+        </div>
+    </nav>
+
+    <div id="boxes">
+        <div style="margin-top: 6%;">
+            <h3 class="h3-responsive text-center about-heading">Patient <span style=" color: #f84949;">Profile</span>
+            </h3>
+        </div>
+        <div class="container-lg row main" style="margin: 0 auto; ">
+            <div id="leftbox" class="col-lg-6">
+                <h5 style="margin-left: 200px;margin-top: 10px;margin-bottom: 2%;"><b>Personal Details</b></h5>
+
+                <ul class="list-unstyled " style="position: relative;">
+
+                    <li style="margin-left: 10px;">
+                        <b>Date of Birth :</b>
+                    </li>
+                    <br>
+                    <li style="margin-left: 10px;">
+                        <b>Email :</b>
+                    </li>
+                    <br>
+                    <li style="margin-left: 10px;">
+                        <b>Contact :</b>
+                    </li>
+                    <br>
+                    <li style="margin-left: 10px;">
+                        <b>Address :</b>
+                    </li>
+                </ul>
+                <img src="https://www.teamunify.com/efslss/UserFiles/Image/QuickUpload/male_086544.png" style="position:absolute;top: 50px;
+                    right: 30px;height:100px;width:100px;">
+                <span style="position:absolute;top: 150px;
+                right: 30px;height:100px;width:100px;">Patient Name</span>
+            </div>
+            <div class="col-lg-6 row" style="    justify-content: space-between;margin: 0 auto;
+            max-width: 540px;
+        ">
+
+                <div id="middlebox" class="col-sm-6">
+                    <br>
+                    <ul class="list-unstyled text-white patient-info-card">
+                        <li style="margin-left: 10px;"><span class="patient-info-heading"><b>Blood Type :</b></span>
+                        </li>
+                        <br>
+                        <li style="margin-left: 10px;"><span class="patient-info-heading"><b>Allergies :</b></span></li>
+                        <br>
+                        <li style="margin-left: 10px;"><span class="patient-info-heading"><b>Disease :</b></span> </li>
+                        <br>
+                        <li style="margin-left: 10px;"><span class="patient-info-heading"><b>Last Visit :</b></span>
+                        </li>
+                        <br>
+                    </ul>
                 </div>
-            </li>
-        </ul>
-    </div>
-</nav>
 
-    <div id = "boxes" > 
-     <div style="margin-top: 6%;">  <h3 class="h3-responsive text-center about-heading">Patient <span style=" color: #f84949;">Profile</span></h3>
-     </div> 
-        <div id = "leftbox"> 
-            <h5 style="margin-left: 200px;margin-top: 10px;margin-bottom: 2%;"><b>Personal Details</b></h5>
-            
-            <ul class="list-unstyled">
-                
-                <li style="margin-left: 10px;" >
-                   <b>Date of Birth :</b>
-                </li>
-                <br>
-                <li style="margin-left: 10px;">
-                    <b>Email :</b> 
-                </li>
-                <br>
-                <li style="margin-left: 10px;">
-                    <b>Contact :</b>
-                </li>
-                <br>
-                <li style="margin-left: 10px;">
-                    <b>Address :</b>
-                </li>
-            </ul>
-            <img src="https://www.teamunify.com/efslss/UserFiles/Image/QuickUpload/male_086544.png"  style="position:absolute; top:220px;left:550px;height:100px;width:100px;">
-            <span style="position:absolute; top:320px;left:550px;height:100px;width:100px;" >Patient Name</span>
-        </div>  
-          
-        <div id = "middlebox"> 
-            <br>
-            <ul class="list-unstyled text-white patient-info-card">
-                <li style="margin-left: 10px;"><span class="patient-info-heading"><b>Blood Type :</b></span> </li><br>
-                <li style="margin-left: 10px;"><span class="patient-info-heading"><b>Allergies :</b></span></li><br>
-                <li style="margin-left: 10px;"><span class="patient-info-heading"><b>Disease :</b></span> </li><br>
-                <li style="margin-left: 10px;"><span class="patient-info-heading"><b>Last Visit :</b></span></li><br>
-            </ul>
-        </div> 
-          
-        <div id = "rightbox"> 
-           <h5 style="color:white;margin-left: 37px ;margin-top: 8px;;"><b>Regular Checkups</b></h5>
-        </div> 
-        <div id="centerbox">
+                <div id="rightbox" class="col-sm-6">
+                    <h5 style="color:white;margin-left: 37px ;margin-top: 8px;;"><b>Regular Checkups</b></h5>
+                </div>
+            </div>
 
+
+            <div id="centerbox" class="container">
+                <h4 style="text-align:center;"><b>Medical History</b></h4>
+                <br><br>
+                <table class="table patient-wrapper">
+                    <tbody>
+                        <tr>
+                            <td class=" border-top-0 align-middle">
+                                <img src="../../../app-assets/images/portrait/small/avatar-s-1.png" alt=""
+                                    class="rounded-circle doctor-img">
+                            </td>
+                            <td class="align-middle border-top-0">Dr. Supriya Dixit</td>
+                            <td class="align-middle border-top-0">Dentist</td>
+                            <td class="align-middle border-top-0">
+                                <i class="la la-calendar-check-o"></i> 15/10/18
+                            </td>
+                            <td class="align-middle border-top-0">
+                                <i class="la la-map-marker"></i> Rohtak , Haryana .
+                            </td>
+                            <td class="align-middle border-top-0">
+                                <i class="la la-circle text-danger"></i> Hospital Visit
+                            </td>
+                            <td class="align-middle border-top-0">
+                                <div class="action">
+                                    <a href="#"><i class="ft-edit text-success"></i></a>
+                                    <a href="#"><i class="ft-trash-2 text-warning"></i></a>
+                                </div>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td class="align-middle">
+                                <img src="../../../app-assets/images/portrait/small/avatar-s-2.png" alt=""
+                                    class="rounded-circle doctor-img">
+                            </td>
+                            <td class="align-middle">Dr. Rajeev Bhatia</td>
+                            <td class="align-middle">Dermatologist</td>
+                            <td class="align-middle">
+                                <i class="la la-calendar-check-o"></i> 20/10/18
+                            </td>
+                            <td class="align-middle">
+                                <i class="la la-map-marker"></i> Dwarka , Delhi
+                            </td>
+                            <td class="align-middle">
+                                <i class="la la-circle text-primary"></i> Medical Consultion
+                            </td>
+                            <td class="align-middle">
+                                <div class="action">
+                                    <a href="#"><i class="ft-edit text-success"></i></a>
+                                    <a href="#"><i class="ft-trash-2 text-warning"></i></a>
+                                </div>
+                            </td>
+                        </tr>
+
+                        <tr>
+                            <td class="align-middle border-bottom-0">
+                                <img src="../../../app-assets/images/portrait/small/avatar-s-10.png" alt=""
+                                    class="rounded-circle doctor-img">
+                            </td>
+                            <td class="align-middle border-bottom-0">Dr. Aditya Sethi</td>
+                            <td class="align-middle border-bottom-0">ID Physician</td>
+                            <td class="align-middle border-bottom-0">
+                                <i class="la la-calendar-check-o"></i> 25/10/18
+                            </td>
+                            <td class="align-middle border-bottom-0">
+                                <i class="la la-map-marker"></i> Rajpura , Punjab
+                            </td>
+                            <td class="align-middle border-bottom-0">
+                                <i class="la la-circle text-danger"></i> Hospital Visit
+                            </td>
+                            <td class="align-middle border-bottom-0">
+                                <div class="action">
+                                    <a href="#"><i class="ft-edit text-success"></i></a>
+                                    <a href="#"><i class="ft-trash-2 text-warning"></i></a>
+                                </div>
+                            </td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
         </div>
-        <div id="centerbox">
-           <h4 style="position: absolute; top:5px;left:45%;"><b>Medical History</b></h4>
-           <br><br> 
-           <table class="table patient-wrapper">
-            <tbody>
-                <tr>
-                    <td class=" border-top-0 align-middle">
-                        <img src="../../../app-assets/images/portrait/small/avatar-s-1.png" alt=""
-                            class="rounded-circle doctor-img">
-                    </td>
-                    <td class="align-middle border-top-0">Dr. Supriya Dixit</td>
-                    <td class="align-middle border-top-0">Dentist</td>
-                    <td class="align-middle border-top-0">
-                        <i class="la la-calendar-check-o"></i> 15/10/18
-                    </td>
-                    <td class="align-middle border-top-0">
-                        <i class="la la-map-marker"></i> Rohtak , Haryana .
-                    </td>
-                    <td class="align-middle border-top-0">
-                        <i class="la la-circle text-danger"></i> Hospital Visit
-                    </td>
-                    <td class="align-middle border-top-0">
-                        <div class="action">
-                            <a href="#"><i class="ft-edit text-success"></i></a>
-                            <a href="#"><i class="ft-trash-2 text-warning"></i></a>
-                        </div>
-                    </td>
-                </tr>
-                <tr>
-                    <td class="align-middle">
-                        <img src="../../../app-assets/images/portrait/small/avatar-s-2.png" alt=""
-                            class="rounded-circle doctor-img">
-                    </td>
-                    <td class="align-middle">Dr. Rajeev Bhatia</td>
-                    <td class="align-middle">Dermatologist</td>
-                    <td class="align-middle">
-                        <i class="la la-calendar-check-o"></i> 20/10/18
-                    </td>
-                    <td class="align-middle">
-                        <i class="la la-map-marker"></i> Dwarka , Delhi
-                    </td>
-                    <td class="align-middle">
-                        <i class="la la-circle text-primary"></i> Medical Consultion
-                    </td>
-                    <td class="align-middle">
-                        <div class="action">
-                            <a href="#"><i class="ft-edit text-success"></i></a>
-                            <a href="#"><i class="ft-trash-2 text-warning"></i></a>
-                        </div>
-                    </td>
-                </tr>
 
-                <tr>
-                    <td class="align-middle border-bottom-0">
-                        <img src="../../../app-assets/images/portrait/small/avatar-s-10.png" alt=""
-                            class="rounded-circle doctor-img">
-                    </td>
-                    <td class="align-middle border-bottom-0">Dr. Aditya Sethi</td>
-                    <td class="align-middle border-bottom-0">ID Physician</td>
-                    <td class="align-middle border-bottom-0">
-                        <i class="la la-calendar-check-o"></i> 25/10/18
-                    </td>
-                    <td class="align-middle border-bottom-0">
-                        <i class="la la-map-marker"></i> Rajpura , Punjab
-                    </td>
-                    <td class="align-middle border-bottom-0">
-                        <i class="la la-circle text-danger"></i> Hospital Visit
-                    </td>
-                    <td class="align-middle border-bottom-0">
-                        <div class="action">
-                            <a href="#"><i class="ft-edit text-success"></i></a>
-                            <a href="#"><i class="ft-trash-2 text-warning"></i></a>
-                        </div>
-                    </td>
-                </tr>
-            </tbody>
-        </table>
+
+    </div>
+    <div class="container row" style="margin: 0 auto;">
+        <div class="col-lg-6 row " style="margin: 0 auto;">
+            <div id="BP" class="col-sm-5"><span
+                    style="position: absolute; left:20px;top:15px;color:white;font-size: medium;">Blood<br>Pressure<br><span
+                        style="font-size: smaller;">120/89 mm/hg</span></span>
+                <img src="https://images.indianexpress.com/2019/10/bloodpressure1200Getty.jpg"
+                    style="position:absolute;top:20px;right:20px;height:60%;width:35%;border-radius:2px;">
+            </div>
+            <div id="HeartRate" class="col-sm-5"><span
+                    style="position: absolute; left:20px;top:35px; font-size: larger;color:white"><b>HeartRate</b></span>
+                <img src="https://assets.considerable.com/wp-content/uploads/2019/04/24170055/heart-beat-line-end-of-life-picture.jpg"
+                    style="position:absolute;top:20px;right:20px;height:60%;width:35%;border-radius:2px;">
+            </div>
+
+            <div id="BMI" class="col-sm-5">
+                <span
+                    style="position: absolute; left:20px;top:10px; font-size: large;color:white"><b>Body<br>Mass<br>Index</b></span>
+
+                <img src="https://www.cdc.gov/healthyweight/images/assessing/bmi-adult-fb-600x315.jpg"
+                    style="position:absolute;top:20px;right:20px;height:60%;width:45%;border-radius:2px;">
+            </div>
+
+            <div id="Glucose" class="col-sm-5"><span
+                    style="position: absolute; left:20px;top:35px; font-size: large;color:white"><b>Glucose</b></span>
+                <img src="https://i0.wp.com/cdn-prod.medicalnewstoday.com/content/images/articles/317/317466/a-glucometer.jpg?w=1155&h=1541"
+                    style="position:absolute;top:20px;right:20px;height:65%;width:45%;border-radius:2px;">
+            </div>
         </div>
-    
-    </div> 
-    <div id="BP"><span style="position: absolute; left:40px;top:15px;color:white;font-size: medium;">Blood<br>Pressure<br><span style="font-size: smaller;">120/89 mm/hg</span></span>
-    <img src="https://images.indianexpress.com/2019/10/bloodpressure1200Getty.jpg" style="position:absolute;top:20px;right:20px;height:60%;width:35%;border-radius:2px;">
+        <div class="col-lg-6 buttonlinks" style="display: flex;
+        justify-content: space-between;
+        flex-direction: column;">
+            <a href="" style="text-decoration: none;"><button
+                    style="height: 50px;width: 350px;letter-spacing: 3px;">Book
+                    Your
+                    Appointment</button>
+            </a>
+            <a href="" style="text-decoration: none;"><button
+                    style="height: 50px;width: 350px;letter-spacing: 3px;">Prescriptions</button>
+            </a>
+            <a href="" style="text-decoration: none;"><button
+                    style="height: 50px;width: 350px;letter-spacing: 3px;">Reports</button>
+            </a>
+        </div>
+
+
+
+
     </div>
-    <div id="HeartRate"><span style="position: absolute; left:40px;top:35px; font-size: larger;color:white"><b>HeartRate</b></span>
-    <img src="https://assets.considerable.com/wp-content/uploads/2019/04/24170055/heart-beat-line-end-of-life-picture.jpg" style="position:absolute;top:20px;right:20px;height:60%;width:35%;border-radius:2px;"></div>
-    <a href="./bmi.html">
-    <div id="BMI" ><span style="position: absolute; left:40px;top:10px; font-size: large;color:white"><b>Body<br>Mass<br>Index</b></span>
-    </a>
-    <img src="https://www.cdc.gov/healthyweight/images/assessing/bmi-adult-fb-600x315.jpg" style="position:absolute;top:20px;right:20px;height:60%;width:45%;border-radius:2px;"></div>
-    <div id="Glucose"><span style="position: absolute; left:40px;top:35px; font-size: large;color:white"><b>Glucose</b></span>
-    <img src="https://i0.wp.com/cdn-prod.medicalnewstoday.com/content/images/articles/317/317466/a-glucometer.jpg?w=1155&h=1541" style="position:absolute;top:20px;right:20px;height:65%;width:45%;border-radius:2px;">
-    </div>
-
-   
-    <a href="" style="text-decoration: none;"><button style="height: 50px;width: 350px;letter-spacing: 3px;position: relative;top:325px;left:270px;">Book Your Appointment</button>
-    </a>
-    <a href="" style="text-decoration: none;"><button style="height: 50px;width: 350px;letter-spacing: 3px;position: relative;top:350px;left:270px;">Prescriptions</button>
-    </a>
-    <a href="" style="text-decoration: none;"><button style="height: 50px;width: 350px;letter-spacing: 3px;position: relative;top:375px;left:270px;">Reports</button>
-    </a>
-    
-        
 
 
-    
+
+
+
+
 </body>
+
 </html>
