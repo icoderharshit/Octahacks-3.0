@@ -139,6 +139,12 @@
         overflow-x: hidden;
       }
     }
+    @media (max-width:768px) {
+      .knowmore {
+       height: 40px !important;
+       font-size: 18px;
+      }
+    }
   </style>
 </head>
 
@@ -187,6 +193,9 @@
       <div class="row">
         <div class="heading col-lg-6 col-sm-10 ml-sm-auto mr-sm-auto">
           <img src="assets/images/banner-text.png" class="banner-text">
+          <a href=" #reforms" style="text-decoration: none;">
+             <button class="knowmore" style="width: 200px;height: 50px;margin-top: 6%;margin-left: 30%;font-family: 'Montserrat', sans-serif;font-weight: 600;">
+             Know More</button></a>
         </div>
         <img src="assets/images/banner-art.png" class="banner-img col-lg-6 col-sm-8 ml-sm-auto mr-sm-auto">
       </div>
@@ -194,9 +203,9 @@
 
     </div>
   </main>
-  <div class="container-fluid" style="background-color: #fdfdfd; padding: 150px 0;">
+  <div class="container-fluid" style="background-color: #fdfdfd; padding: 140px 0;">
     <div class="container-fluid">
-      <h2 class="h2-responsive text-center about-heading"
+      <h2 class="h2-responsive text-center about-heading " id="ab"
         style="font-family: 'Montserrat', sans-serif;font-weight: bolder;">About <span
           style=" color: #f84949;">Us</span></h2>
       <div class="container row about-container">
@@ -419,12 +428,12 @@
       <h1 class="h1-responsive text-center"
         style="font-size: 60px;font-family: 'Montserrat', sans-serif;font-weight: 700;">
         Our Team</h1>
-      <div class="card-deck" style="margin-left: 15%;margin-right: 15%;margin-top: 6%;">
+      <div class="card-deck" style="margin-left: 12%;margin-right: 12%;margin-top: 6%;">
         <div class="card" style="border: none;">
           <img class="card-img-top" src="./assets/images/man-avatars.jpg" style="height: 220px; border-radius: 50%;"
             alt="Card image cap">
           <div class="card-body">
-            <h5 class="text-center card-title">Deepak Singh</h5>
+            <h5 class="text-center card-title" style="font-family: 'Montserrat', sans-serif;font-weight: 700;">Deepak Singh</h5>
             <h2 class="text-center card-title"><a href=""><i class="fa fa-github" aria-hidden="true"></i></a>
               <a href=""> <i class="fa fa-linkedin-square" aria-hidden="true"></i></a></h2>
           </div>
@@ -434,7 +443,7 @@
           <img class="card-img-top" src="./assets/images/woman-avatars.jpg" style="height: 220px; border-radius: 50%;"
             alt="Card image cap">
           <div class="card-body">
-            <h5 class=" text-center card-title">Swati Bhatia</h5>
+            <h5 class=" text-center card-title" style="font-family: 'Montserrat', sans-serif;font-weight: 700;">Swati Bhatia</h5>
             <h2 class="text-center card-title"><a href=""><i class="fa fa-github" aria-hidden="true"></i></a>
               <a href=""> <i class="fa fa-linkedin-square" aria-hidden="true"></i></a></h2>
           </div>
@@ -444,7 +453,7 @@
           <img class="card-img-top" src="./assets/images/man-avatars.jpg" style="height: 220px; border-radius: 50%;"
             alt="Card image cap">
           <div class="card-body">
-            <h5 class=" text-center card-title">Harshit Sharma</h5>
+            <h5 class=" text-center card-title" style="font-family: 'Montserrat', sans-serif;font-weight: 700;">Harshit Sharma</h5>
             <h2 class="text-center card-title"><a href=""><i class="fa fa-github" aria-hidden="true"></i></a>
               <a href=""> <i class="fa fa-linkedin-square" aria-hidden="true"></i></a></h2>
           </div>
@@ -454,7 +463,7 @@
           <img class="card-img-top" src="./assets/images/woman-avatars.jpg" style="height: 220px; border-radius: 50%;"
             alt="Card image cap">
           <div class="card-body">
-            <h5 class="text-center card-title">Bhavika Malhotra</h5>
+            <h5 class="text-center card-title" style="font-family: 'Montserrat', sans-serif;font-weight: 700;">Bhavika Malhotra</h5>
             <h2 class="text-center card-title"><a href=""><i class="fa fa-github" aria-hidden="true"></i></a>
               <a href=""> <i class="fa fa-linkedin-square" aria-hidden="true"></i></a></h2>
           </div>
@@ -474,20 +483,22 @@
       </div>
       <ul class="footer-right">
         <li>
-          <h2>Links</h2>
+          <h2>Help</h2>
           <ul class="box">
-            <li><a href="/index.html">Home</a></li>
-            <li><a href="/about.html">About Us</a></li>
-            <li><a href="/workwithus.html">Work With Us</a></li>
-            <li><a href="/contact.html">Contact Us</a></li>
+            <li><a href="#">Home</a></li>
+            <li><a href="#ab">About Us</a></li>
+            <li><a href="./register.html">Work With Us</a></li>
+            <li><a href="./bmi.html">Calculate BMI</a></li>
+            <li><a href="#contact">Contact Us</a></li>
           </ul>
         </li>
         <li class="features">
-          <h2>Links</h2>
+          <h2>About</h2>
           <ul class="box">
-            <li><a href="#">Privacy Policy</a></li>
-            <li><a href="#">Disclaimer</a></li>
-            <li><a href="#">Terma and Conditions</a></li>
+            <li><a href="./membership.html">Privacy Policy</a></li>
+            <li><a href="#ab">Disclaimer</a></li>
+            <li><a href="./membership.html">Membership</a></li>
+            <li><a href="./membership.html">Terms and Conditions</a></li>
           </ul>
         </li>
         <li>
@@ -502,7 +513,7 @@
         </li>
       </ul>
       <div class="footer-bottom">
-        <p>All Right reserved</p>
+        <p style="font-family: 'Montserrat', sans-serif;">All Right reserved</p>
       </div>
     </footer>
 
