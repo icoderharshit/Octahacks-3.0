@@ -1,216 +1,251 @@
-
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>BMI</title>
-    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.5.3/dist/css/bootstrap.min.css" integrity="sha384-TX8t27EcRE3e/ihU7zmQxVncDAy5uIKz4rEkgIXeMed4M0jlfIDPvg6uqKI2xXr2" crossorigin="anonymous">
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css"/>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.5.3/dist/css/bootstrap.min.css"
+        integrity="sha384-TX8t27EcRE3e/ihU7zmQxVncDAy5uIKz4rEkgIXeMed4M0jlfIDPvg6uqKI2xXr2" crossorigin="anonymous">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css" />
     <link rel="stylesheet" href="./font-awesome-4.7.0/css/font-awesome.min.css">
-   <style>
-       body{
-           margin-left: 5%;
-           margin-right: 5%;
-       }
-       .heading{
-           font-family:fantasy;
-           font-size: 60px;
-           letter-spacing: 8px;
-           
-       }
-       .bmi-box{
-           background-color: #f84949;
-           height: 335px;
-           width: 450px;
-           margin: 0 auto;
-           display: table;
-           margin-top: 4%;
-       }
-       .Categories{
-           margin-top: 7%;
-           color: white;
-       }
-       .health
-       {
-           margin-top: 5%;
-       }
-       .eating-plan{
-        background-color: #f84949;
-           height: 335px;
-           width: 950px;
-           margin: 0 auto;
-           display: table;
-           margin-top: 4%;
-           margin-bottom: 2%;
-       }
-       @media (max-width: 768px){
-        .eating-plan{
-            width: 446px;
+    <style>
+        body {
+            margin-left: 5%;
+            margin-right: 5%;
         }
-       }
-       @media (min-width: 769px) and (max-width: 1192px){
-        .eating-plan{
-            width: 700px;
-        }
-       }
 
-@media (max-width: 768px){
-        .bmiform{
-           margin-left: 14% !important;
+        .heading {
+            font-family: fantasy;
+            font-size: 60px;
+            letter-spacing: 8px;
+
         }
-       }
-       .button{
-          
-          height: 35px;
-          letter-spacing: 1px;
-          background-color: #f84949;
-          border: none;
-          border-radius: 4px;
-          color: white;
-          margin: 0 auto;
-          display: table;
+
+        .bmi-box {
+            background-color: #f84949;
+            height: 335px;
+            width: 450px;
+            margin: 0 auto;
+            display: table;
+            margin-top: 4%;
         }
-        .button:hover{
-           background-color: white;
-          border:2px solid #f84949;
-          border-radius: 4px;
-          color: #f84949;
-          font-weight: 700;
+
+        .Categories {
+            margin-top: 7%;
+            color: white;
         }
-       /*table,td {
+
+        .health {
+            margin-top: 5%;
+        }
+
+        .eating-plan {
+            background-color: #f84949;
+            height: 335px;
+            width: 950px;
+            margin: 0 auto;
+            display: table;
+            margin-top: 4%;
+            margin-bottom: 2%;
+        }
+
+        @media (max-width: 768px) {
+            .eating-plan {
+                width: 446px;
+            }
+        }
+
+        @media (min-width: 769px) and (max-width: 1192px) {
+            .eating-plan {
+                width: 700px;
+            }
+        }
+
+        @media (max-width: 768px) {
+            .bmiform {
+                margin-left: 14% !important;
+            }
+        }
+
+        .button {
+
+            height: 35px;
+            letter-spacing: 1px;
+            background-color: #f84949;
+            border: none;
+            border-radius: 4px;
+            color: white;
+            margin: 0 auto;
+            display: table;
+        }
+
+        .button:hover {
+            background-color: white;
+            border: 2px solid #f84949;
+            border-radius: 4px;
+            color: #f84949;
+            font-weight: 700;
+        }
+
+        /*table,td {
         border: 1px solid black;
         width:500px;
        }  */
-      
-   </style>
+    </style>
 </head>
+
 <body>
     <nav aria-label="breadcrumb">
         <ol class="breadcrumb bg-transparent" class="path-nav">
-          <li class="breadcrumb-item"><a href="/Saada-Hack">Home</a></li>
-          <li class="breadcrumb-item active" aria-current="page">BMI</li>
+            <li class="breadcrumb-item"><a href="./index.html">Home</a></li>
+            <li class="breadcrumb-item active" aria-current="page">BMI</li>
         </ol>
-      </nav>
+    </nav>
     <div>
-        <h1 class="h1-responsive text-center heading">BMI  <i  class="fa fa-child"  aria-hidden="true" style="color: #f84949;"></i>
+        <h1 class="h1-responsive text-center heading">BMI <i class="fa fa-child" aria-hidden="true"
+                style="color: #f84949;"></i>
         </h1>
-       <h4 class="h4-responsive text-center" >Body mass index (BMI) is a measure of body fat based on height and weight that applies to adult men and women.
-</h4>
-<div class="bmi-box">
-<h1 class="h1-responsive text-center" >BMI Categories</h1>
-<h5 class="h5-responsive text-center Categories" >Underweight = < 18.5</h5>
-<h5 class="h5-responsive text-center Categories" >Normal weight = 18.5–24.9</h5>
-<h5 class="h5-responsive text-center Categories" >Overweight = 25–29.9</h5>
-<h5 class="h5-responsive text-center Categories" >Obesity = BMI of 30 or greater</h5>
-</div> 
-<div class="bmiform" style="margin-left: 36%;margin-right: 30%;margin-top: 3%;">
-<form name="bmiForm">
-    <table >
-    <tr>
-        <th style="text-align: center;">Your Weight(kg) :</th>
-        <td><input type="text" name="weight" size="20" style="margin-left: 20px;"></td>
-    </tr>
-    <tr>
-        <th style="text-align: center;">Your Height(cm) : </th>
-        <td><input type="text" name="height" size="20" style="margin-left: 20px;margin-top: 10px;"></td>
-    </tr>
-    <tr>
-    <td colspan="2" ><b><input class ="button" type="button" value="Calculate BMI" onClick="calculateBmi()" style="display:block;margin:20px;margin-left:93px;font-weight: bold;width:180px;"></b></td>
-    </tr>
-    <tr>
-        <th style="text-align: center;">Your BMI :</th> 
-        <td><input type="text" name="bmi" size="20" style="margin-left: 20px;"></td>
-    </tr>
-    <tr>
-        <th style="text-align: center;">This Means : </th>
-        <td><input type="text" name="meaning" size="20" style="margin-left: 20px;margin-top:5px;"></td>
-    </tr>
-    <tr>
-        <td colspan="2"><input class= "button" type="reset" value="Reset"  style="display:block;margin-left:107px;margin-top: 20px;margin-bottom: 20px;font-weight: bold;width:120px;"/></td>
-    </tr>
-    </table>
-</form>
-</div>
-<h2 class="h1-responsive text-center health">Why Is a Healthy Weight Important?</h2>
-<p style="margin-left: 12%;margin-right: 12%;"><i  class="fa fa-check"  aria-hidden="true" style="color: #f84949;"></i> Reaching and maintaining a healthy weight is important for overall health and can help you prevent and
-     control many diseases and conditions. If you are overweight or obese, you are at higher risk of developing
-      serious health problems, including heart disease, high blood pressure, type 2 diabetes, gallstones,
-       breathing problems, and certain cancers. That is why maintaining a healthy
-        weight is so important: It helps you lower your risk for developing these problems, helps you
-         feel good about yourself, and gives you more energy to enjoy life. </p>
+        <h4 class="h4-responsive text-center">Body mass index (BMI) is a measure of body fat based on height and weight
+            that applies to adult men and women.
+        </h4>
+        <div class="bmi-box">
+            <h1 class="h1-responsive text-center">BMI Categories</h1>
+            <h5 class="h5-responsive text-center Categories">Underweight = < 18.5</h5>
+                    <h5 class="h5-responsive text-center Categories">Normal weight = 18.5–24.9</h5>
+                    <h5 class="h5-responsive text-center Categories">Overweight = 25–29.9</h5>
+                    <h5 class="h5-responsive text-center Categories">Obesity = BMI of 30 or greater</h5>
+        </div>
+        <div class="bmiform" style="margin-left: 36%;margin-right: 30%;margin-top: 3%;">
+            <form name="bmiForm">
+                <table>
+                    <tr>
+                        <th style="text-align: center;">Your Weight(kg) :</th>
+                        <td><input type="text" name="weight" size="20" style="margin-left: 20px;"></td>
+                    </tr>
+                    <tr>
+                        <th style="text-align: center;">Your Height(cm) : </th>
+                        <td><input type="text" name="height" size="20" style="margin-left: 20px;margin-top: 10px;"></td>
+                    </tr>
+                    <tr>
+                        <td colspan="2"><b><input class="button" type="button" value="Calculate BMI"
+                                    onClick="calculateBmi()"
+                                    style="display:block;margin:20px;margin-left:93px;font-weight: bold;width:180px;"></b>
+                        </td>
+                    </tr>
+                    <tr>
+                        <th style="text-align: center;">Your BMI :</th>
+                        <td><input type="text" name="bmi" size="20" style="margin-left: 20px;"></td>
+                    </tr>
+                    <tr>
+                        <th style="text-align: center;">This Means : </th>
+                        <td><input type="text" name="meaning" size="20" style="margin-left: 20px;margin-top:5px;"></td>
+                    </tr>
+                    <tr>
+                        <td colspan="2"><input class="button" type="reset" value="Reset"
+                                style="display:block;margin-left:107px;margin-top: 20px;margin-bottom: 20px;font-weight: bold;width:120px;" />
+                        </td>
+                    </tr>
+                </table>
+            </form>
+        </div>
+        <h2 class="h1-responsive text-center health">Why Is a Healthy Weight Important?</h2>
+        <p style="margin-left: 12%;margin-right: 12%;"><i class="fa fa-check" aria-hidden="true"
+                style="color: #f84949;"></i> Reaching and maintaining a healthy weight is important for overall health
+            and can help you prevent and
+            control many diseases and conditions. If you are overweight or obese, you are at higher risk of developing
+            serious health problems, including heart disease, high blood pressure, type 2 diabetes, gallstones,
+            breathing problems, and certain cancers. That is why maintaining a healthy
+            weight is so important: It helps you lower your risk for developing these problems, helps you
+            feel good about yourself, and gives you more energy to enjoy life. </p>
     </div>
     <h2 class="h1-responsive text-center health">Energy Balance</h2>
-    <p style="margin-left: 12%;margin-right: 12%;">Energy balance is important for maintaining a healthy weight. 
-        The amount of energy or calories you get from food and drinks (energy IN) is balanced with the energy your 
+    <p style="margin-left: 12%;margin-right: 12%;">Energy balance is important for maintaining a healthy weight.
+        The amount of energy or calories you get from food and drinks (energy IN) is balanced with the energy your
         body uses for things like breathing, digesting, and being physically active (energy OUT):</p>
-       
-        <p style="margin-left: 18%;margin-right: 12%;">   <i  class="fa fa-check"  aria-hidden="true" style="color: #f84949;"></i>
-            The same amount of energy IN and energy OUT over time = weight stays the same (energy balance)</p>
 
-            <p style="margin-left: 18%;margin-right: 12%;">   <i  class="fa fa-check"  aria-hidden="true" style="color: #f84949;"></i>
-    More energy IN than OUT over time = weight gain</p>
+    <p style="margin-left: 18%;margin-right: 12%;"> <i class="fa fa-check" aria-hidden="true"
+            style="color: #f84949;"></i>
+        The same amount of energy IN and energy OUT over time = weight stays the same (energy balance)</p>
 
-    <p style="margin-left: 18%;margin-right: 12%;">   <i  class="fa fa-check"  aria-hidden="true" style="color: #f84949;"></i>
-    More energy OUT than IN over time = weight loss</p>
-   
+    <p style="margin-left: 18%;margin-right: 12%;"> <i class="fa fa-check" aria-hidden="true"
+            style="color: #f84949;"></i>
+        More energy IN than OUT over time = weight gain</p>
+
+    <p style="margin-left: 18%;margin-right: 12%;"> <i class="fa fa-check" aria-hidden="true"
+            style="color: #f84949;"></i>
+        More energy OUT than IN over time = weight loss</p>
+
     <h4 class="h1-responsive text-center health">You can reach and maintain a healthy weight if you :</h4>
-    
-    <p style="margin-left: 18%;margin-right: 12%;">   <i  class="fa fa-check"  aria-hidden="true" style="color: #f84949;"></i>
-            Are physically active</p>  
-    
-            <p style="margin-left: 18%;margin-right: 12%;">   <i  class="fa fa-check"  aria-hidden="true" style="color: #f84949;"></i>
-                Limit the time you spend being physically inactive</p>
-     
-                <p style="margin-left: 18%;margin-right: 12%;">   <i  class="fa fa-check"  aria-hidden="true" style="color: #f84949;"></i>
-                Follow a healthy diet, and if you are overweight or obese, reduce your daily intake by 500 calories for weight loss</p>
-        
-         <div class="eating-plan">   
-               <h2 class="h1-responsive text-center " style="margin-top: 2%;">Healthy Eating Plans  <i  class="fa fa-cutlery"  aria-hidden="true" style="color: white"></i></h2>
-                        
-<h5 class="h5-responsive text-center " style="color: white; margin-top: 6%;" >  <i  class="fa fa-star-o"  aria-hidden="true" style="color: white"></i>
-    Controls portion sizes</h5> 
-               <h5 class="h5-responsive text-center " style="color: white; margin-top: 2%;" >  <i  class="fa fa-star-o"  aria-hidden="true" style="color: white"></i>
-                Limits saturated and trans fats, sodium, and added sugars
-</h5>     
-        
-<h5 class="h5-responsive text-center " style="color: white; margin-top: 2%;" >  <i  class="fa fa-star-o"  aria-hidden="true" style="color: white"></i>
-    Includes lean meats, poultry, fish, beans, eggs, and nuts</h5>
-   
-    <h5 class="h5-responsive text-center " style="color: white; margin-top: 2%;" >  <i  class="fa fa-star-o"  aria-hidden="true" style="color: white"></i>
-        Emphasizes vegetables, fruits, whole grains, and fat-free or low-fat dairy products</h5>
-   
-         
-      
-         
-     </div> 
-        </body>
-        <script>
-            <!--
-            function calculateBmi() {
+
+    <p style="margin-left: 18%;margin-right: 12%;"> <i class="fa fa-check" aria-hidden="true"
+            style="color: #f84949;"></i>
+        Are physically active</p>
+
+    <p style="margin-left: 18%;margin-right: 12%;"> <i class="fa fa-check" aria-hidden="true"
+            style="color: #f84949;"></i>
+        Limit the time you spend being physically inactive</p>
+
+    <p style="margin-left: 18%;margin-right: 12%;"> <i class="fa fa-check" aria-hidden="true"
+            style="color: #f84949;"></i>
+        Follow a healthy diet, and if you are overweight or obese, reduce your daily intake by 500 calories for weight
+        loss</p>
+
+    <div class="eating-plan">
+        <h2 class="h1-responsive text-center " style="margin-top: 2%;">Healthy Eating Plans <i class="fa fa-cutlery"
+                aria-hidden="true" style="color: white"></i></h2>
+
+        <h5 class="h5-responsive text-center " style="color: white; margin-top: 6%;"> <i class="fa fa-star-o"
+                aria-hidden="true" style="color: white"></i>
+            Controls portion sizes</h5>
+        <h5 class="h5-responsive text-center " style="color: white; margin-top: 2%;"> <i class="fa fa-star-o"
+                aria-hidden="true" style="color: white"></i>
+            Limits saturated and trans fats, sodium, and added sugars
+        </h5>
+
+        <h5 class="h5-responsive text-center " style="color: white; margin-top: 2%;"> <i class="fa fa-star-o"
+                aria-hidden="true" style="color: white"></i>
+            Includes lean meats, poultry, fish, beans, eggs, and nuts</h5>
+
+        <h5 class="h5-responsive text-center " style="color: white; margin-top: 2%;"> <i class="fa fa-star-o"
+                aria-hidden="true" style="color: white"></i>
+            Emphasizes vegetables, fruits, whole grains, and fat-free or low-fat dairy products</h5>
+
+
+
+
+    </div>
+</body>
+<script>
+            < !--
+        function calculateBmi() {
             var weight = document.bmiForm.weight.value
             var height = document.bmiForm.height.value
-            if(weight > 0 && height > 0){	
-            var finalBmi = weight/(height/100*height/100)
-            document.bmiForm.bmi.value = finalBmi
-            if(finalBmi < 18.5){
-            document.bmiForm.meaning.value = "That you are too thin."
+            if (weight > 0 && height > 0) {
+                var finalBmi = weight / (height / 100 * height / 100)
+                document.bmiForm.bmi.value = finalBmi
+                if (finalBmi < 18.5) {
+                    document.bmiForm.meaning.value = "That you are too thin."
+                }
+                if (finalBmi > 18.5 && finalBmi < 25) {
+                    document.bmiForm.meaning.value = "That you are healthy."
+                }
+                if (finalBmi > 25) {
+                    document.bmiForm.meaning.value = "That you have overweight."
+                }
             }
-            if(finalBmi > 18.5 && finalBmi < 25){
-            document.bmiForm.meaning.value = "That you are healthy."
+            else {
+                alert("Please Fill in everything correctly")
             }
-            if(finalBmi > 25){
-            document.bmiForm.meaning.value = "That you have overweight."
-            }
-            }
-            else{
-            alert("Please Fill in everything correctly")
-            }
-            }
+        }
             //-->
-            </script>
-<script src="https://code.jquery.com/jquery-3.5.1.slim.min.js" integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj" crossorigin="anonymous"></script>
-<script src="/Saada-Hack/assets/js/script.js"></script>   
-<script src="https://cdn.jsdelivr.net/npm/bootstrap@4.5.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-ho+j7jyWK8fNQe+A12Hb8AhRq26LrZ/JpcUGGOn+Y7RsweNrtN/tE3MoK7ZeZDyx" crossorigin="anonymous"></script>
+</script>
+<script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"
+    integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj"
+    crossorigin="anonymous"></script>
+<script src="./assets/js/script.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@4.5.3/dist/js/bootstrap.bundle.min.js"
+    integrity="sha384-ho+j7jyWK8fNQe+A12Hb8AhRq26LrZ/JpcUGGOn+Y7RsweNrtN/tE3MoK7ZeZDyx"
+    crossorigin="anonymous"></script>
 
 </html>
