@@ -181,8 +181,9 @@
 <body>
     <nav class=" navbar navbar-expand-lg navbar-expand-md navbar-light fixed-top nav-black" id="navbar"
         style="width: 100vw !important;">
-        <a class="navbar-brand" href="./index.html" style="font-family: 'Montserrat', sans-serif;font-weight: 800;">Octahacks 3.0</a>
-      <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#collapsed-content"
+        <a class="navbar-brand" href="./index.html"
+            style="font-family: 'Montserrat', sans-serif;font-weight: 800;">Octahacks 3.0</a>
+        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#collapsed-content"
             aria-controls="nav" aria-expanded="false" aria-label="Toggle navigation">
             <span class="navigation__icon">
                 &nbsp;
@@ -229,25 +230,25 @@
                 <ul class="list-unstyled " style="position: relative;">
 
                     <li style="margin-left: 10px;">
-                        <b>Date of Birth :</b>
+                        <b>Date of Birth :</b><span id="dob"></span>
                     </li>
                     <br>
                     <li style="margin-left: 10px;">
-                        <b>Email :</b>
+                        <b>Age :</b><span id="age"></span>
                     </li>
                     <br>
                     <li style="margin-left: 10px;">
-                        <b>Contact :</b>
+                        <b>Contact :</b><span id="phone"></span>
                     </li>
                     <br>
                     <li style="margin-left: 10px;">
-                        <b>Address :</b>
+                        <b>Address :</b><span id="add"></span>
                     </li>
                 </ul>
                 <img src="https://www.teamunify.com/efslss/UserFiles/Image/QuickUpload/male_086544.png" style="position:absolute;top: 50px;
                     right: 30px;height:100px;width:100px;">
                 <span style="position:absolute;top: 150px;
-                right: 30px;height:100px;width:100px;">Patient Name</span>
+                right: 30px;height:100px;" id="displayNameHolder">Patient Name</span>
             </div>
             <div class="col-lg-6 row" style="    justify-content: space-between;margin: 0 auto;
             max-width: 540px;
@@ -256,7 +257,8 @@
                 <div id="middlebox" class="col-sm-6">
                     <br>
                     <ul class="list-unstyled text-white patient-info-card">
-                        <li style="margin-left: 10px;"><span class="patient-info-heading"><b>Blood Type :</b></span>
+                        <li style="margin-left: 10px;"><span class="patient-info-heading"><b>Blood Type :
+                                    &nbsp;</b><span id="blood"></span></span>
                         </li>
                         <br>
                         <li style="margin-left: 10px;"><span class="patient-info-heading"><b>Allergies :</b></span></li>
@@ -400,13 +402,52 @@
                     style="height: 50px;width: 350px;letter-spacing: 3px;">Reports</button>
             </a>
         </div>
-
-
-
-
     </div>
+    <script src="https://www.gstatic.com/firebasejs/8.0.0/firebase-app.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/8.0.0/firebase-auth.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/8.0.0/firebase-database.js"></script>
+    <script>
+        var firebaseConfig = {
+            apiKey: "AIzaSyAs5tsHHmTFBKjTRSoJS42OJC13helmTq0",
+            authDomain: "saadahack.firebaseapp.com",
+            databaseURL: "https://saadahack.firebaseio.com",
+            projectId: "saadahack",
+            storageBucket: "saadahack.appspot.com",
+            messagingSenderId: "702033344107",
+            appId: "1:702033344107:web:01424d2231f7671e30632e",
+            measurementId: "G-D6K461P8SK"
+        };
+        firebase.initializeApp(firebaseConfig);
+    </script>
+    <script type="text/javascript">
 
-
+        var userId = localStorage.getItem('id');
+        firebase.database().ref('Users/' + userId).on('value', function (snapshot) {
+            var name = (snapshot.val() && snapshot.val().FirstName) + " " + (snapshot.val() && snapshot.val().LastName);
+            var dob = (snapshot.val() && snapshot.val().DOB);
+            var tele = (snapshot.val() && snapshot.val().Phone);
+            var address = (snapshot.val() && snapshot.val().Address);
+            var age = (snapshot.val() && snapshot.val().Age);
+            var blood = (snapshot.val() && snapshot.val().BloodGroup);
+            console.log(snapshot.val())
+            //  var tele=(snapshot.val() && snapshot.val().Phone);
+            //  var address=(snapshot.val() && snapshot.val().Address);
+            //  var gender=(snapshot.val() && snapshot.val().Gender);
+            //  var city=(snapshot.val() && snapshot.val().City);
+            //  var state=(snapshot.val() && snapshot.val().State);
+            //  var dob=(snapshot.val() && snapshot.val().DOB);
+            document.getElementById('displayNameHolder').innerHTML = name;
+            //  document.getElementById('lname').innerHTML=lname;
+            document.getElementById('phone').innerHTML = tele;
+            document.getElementById('add').innerHTML = address;
+            document.getElementById('age').innerHTML = age;
+            //  document.getElementById('gender').innerHTML=gender;
+            //  document.getElementById('city').innerHTML=city;
+            //  document.getElementById('state').innerHTML=state;
+            document.getElementById('dob').innerHTML = dob;
+            document.getElementById('blood').innerHTML = blood;
+        });
+    </script>
 
 
 
