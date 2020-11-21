@@ -1,0 +1,183 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Register</title>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.5.3/dist/css/bootstrap.min.css" integrity="sha384-TX8t27EcRE3e/ihU7zmQxVncDAy5uIKz4rEkgIXeMed4M0jlfIDPvg6uqKI2xXr2" crossorigin="anonymous">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css"/>
+    <link rel="stylesheet" href="/Saada-Hack/assets/css/style.css">
+</head>
+<style>
+  select{
+    padding-left: 12px;
+    background-color: rgb(247, 247, 247);
+    border : wheat;
+    width: 600px;
+ margin-top: 12px ;
+ margin-bottom: 12px ;
+    height: 44px;
+    border-radius:5px;
+    font-size: 15px;
+    font-weight: 500;
+    color: rgb(109, 106, 106);
+}
+</style>
+<body style="background-color: #FFCAD4;">
+    <nav aria-label="breadcrumb">
+        <ol class="breadcrumb bg-transparent" class="path-nav">
+          <li class="breadcrumb-item"><a href="/Saada-Hack">Home</a></li>
+          <li class="breadcrumb-item active" aria-current="page">Register</li>
+        </ol>
+      </nav>
+    <div class="container-fluid">
+        <div class="row">
+           <div class="col-lg-6 col-sm-6 register-art">
+           
+           </div><div class="col-lg-6 regform">
+                <h2 class="h2-responsive text-center reg-head mt-3">Registration Form <i class="fa fa-id-card-o" aria-hidden="true"></i></h2>
+            
+<label for="fname"><input type="text" placeholder="First Name" name="fname" id="fname" required/>
+</label><br/>
+<label for="lname"><input type="text" placeholder="Last Name" name="lname" id="lname" required/>
+</label><br/>
+        <label>  Registering as :</label> <br>
+       <select id="typee">
+        <option name="drop" value="Not Selected">Select</option>
+        <option name="drop" value="Chemist">Chemist</option>
+        <option name="drop" value="Doctor">Doctor</option>
+        <option name="drop" value="Patient">Patient</option>
+       </select>
+       <br/>
+<label for="email"><input type="email" placeholder="Enter your email" name="email" id="email" required/>
+</label><br/>
+<label for="password"><input type="password" placeholder="Enter your password" name="password" id="password" required/>
+</label><br/>
+<label for="phone"><input type="tel" placeholder="Phone No." name="tele" id="tele" required/>
+</label><br/>
+<label for="address"><textarea type="text" placeholder="Address" name="address" id="address" required></textarea>
+</label><br/>
+<label for="gender" class="regrad" style="color: rgb(109, 109, 109);">
+    <input type="radio" name="gender" value="Male" required />Male
+    <input type="radio" name="gender" value="Female" required />Female
+    <input type="radio" name="gender" value="Not to specify" required />Not to specify
+</label><br/>
+<label for="city"><input type="text" placeholder="City/Town" name="city" id="city" required/>
+</label><br/>
+
+<label for="state"><input type="text" placeholder="State" name="state" id="state" required/>
+</label><br/>
+
+<label for="birthdate"><input type="date" title="Date of Birth" name="dob" id="dob" style="color: rgb(110, 110, 110);" required/>
+</label><br/>
+<button class="d-block ml-auto mr-auto mt-3 btn btn-outline-danger btn-md" onclick="RegisterUser()"> Register</button>
+
+            </div>
+    </div></div>
+    <script src="https://www.gstatic.com/firebasejs/8.0.0/firebase-app.js"></script>
+<script src="https://www.gstatic.com/firebasejs/8.0.0/firebase-auth.js"></script>
+<script src="https://www.gstatic.com/firebasejs/8.0.0/firebase-database.js"></script>
+<script>
+  var firebaseConfig = {
+     apiKey: "AIzaSyAs5tsHHmTFBKjTRSoJS42OJC13helmTq0",
+     authDomain: "saadahack.firebaseapp.com",
+     databaseURL: "https://saadahack.firebaseio.com",
+     projectId: "saadahack",
+     storageBucket: "saadahack.appspot.com",
+     messagingSenderId: "702033344107",
+     appId: "1:702033344107:web:01424d2231f7671e30632e",
+     measurementId: "G-D6K461P8SK"
+   };
+  
+   firebase.initializeApp(firebaseConfig);
+
+   function RegisterUser() {
+   var email=document.getElementById('email').value;
+   var password=document.getElementById('password').value;
+   var address=document.getElementById('address').value;
+   var tele=document.getElementById('tele').value;
+   var fname=document.getElementById('fname').value;
+   var lname=document.getElementById('lname').value;
+   var city=document.getElementById('city').value;
+   var state=document.getElementById('state').value;
+   var dob=document.getElementById('dob').value;
+   var sel = document.getElementById('typee');
+   function getSelectedOption(sel) {
+    var opt;
+    for ( var i = 0, len = sel.options.length; i < len; i++ ) {
+        opt = sel.options[i];
+        if ( opt.selected === true ) {
+            break;
+        }
+    }
+    return opt;
+}
+
+// get selected option in sel (reference obtained above)
+var opt = getSelectedOption(sel);
+   var selectedGender;
+document.getElementsByName("gender").forEach(function(elm) {
+  if (elm.checked) {
+    selectedGender = elm.value;
+  }
+});
+
+   firebase.auth().createUserWithEmailAndPassword(email,password).then(function(){
+    
+    var id=firebase.auth().currentUser.uid;
+    firebase.database().ref('/Users/'+id).set({
+     FirstName:fname,
+     LastName:lname,
+     Type:opt.value,
+     Phone:tele,
+     Address:address,
+     Gender:selectedGender,
+     City:city,
+     State:state,
+     DOB:dob
+    });
+    sendVerificationEmail();
+
+
+   }).catch(function(error){
+
+    var errorcode=error.code;
+    var errormsg=error.message;
+
+   });
+
+   const auth = firebase.auth();
+
+auth.useDeviceLanguage();
+
+const sendVerificationEmail = () => {
+   
+    auth.currentUser.sendEmailVerification()
+    .then(() => {
+      alert('Verification Email Sent Successfully, please check and sign in !'); 
+     
+      
+    })
+    .catch(error => {
+        console.error(error);
+    })
+};
+
+
+
+auth.onAuthStateChanged(user => {
+    if(user && (state === 0))
+        window.location.assign('./profile.html');
+})
+
+
+
+  }
+ 
+ </script>
+</body>
+
+<script src="https://code.jquery.com/jquery-3.5.1.slim.min.js" integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj" crossorigin="anonymous"></script>
+<script src="/Saada-Hack/assets/js/script.js"></script>   
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@4.5.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-ho+j7jyWK8fNQe+A12Hb8AhRq26LrZ/JpcUGGOn+Y7RsweNrtN/tE3MoK7ZeZDyx" crossorigin="anonymous"></script>
+</html>
