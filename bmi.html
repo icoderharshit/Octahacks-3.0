@@ -129,7 +129,7 @@
                     </tr>
                     <tr>
                         <td colspan="2"><b><input class="button" type="button" value="Calculate BMI"
-                                    onClick="calculateBmi()"
+                                    onclick="calculateBmi()"
                                     style="display:block;margin:20px;margin-left:93px;font-weight: bold;width:180px;"></b>
                         </td>
                     </tr>
@@ -217,10 +217,10 @@
     </div>
 </body>
 <script>
-            < !--
+          
         function calculateBmi() {
-            var weight = document.bmiForm.weight.value
-            var height = document.bmiForm.height.value
+            var weight = document.bmiForm.weight.value;
+            var height = document.bmiForm.height.value;
             if (weight > 0 && height > 0) {
                 var finalBmi = weight / (height / 100 * height / 100)
                 document.bmiForm.bmi.value = finalBmi
@@ -238,7 +238,7 @@
                 alert("Please Fill in everything correctly")
             }
         }
-            //-->
+           
 </script>
 <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"
     integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj"
