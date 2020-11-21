@@ -83,7 +83,7 @@ main {
 	}
 }
 .register-art {
-	background-image: url(/Saada-Hack/assets/images/register.jpg);
+	background-image: url(/assets/images/register.jpg);
 	background-size: cover;
 	background-repeat: no-repeat;
 	background-position: center;
@@ -105,7 +105,7 @@ main {
 .regform input[type="tel"],
 .regform input[type="date"],
 textarea,
-.regform input[type="password"] {
+.regform input[type="password"], .regform input[type="number"] ,#typee{
 	border: none;
 	background-color: transparent;
 	outline: none;
@@ -128,7 +128,7 @@ label {
 .regform input[type="tel"]:focus,
 .regform input[type="date"]:focus,
 textarea:focus,
-.regform input[type="password"]:focus {
+.regform input[type="password"]:focus , .regform input[type="number"]:focus,#typee:focus{
 	border-bottom: 2px solid #dd7d8e;
 }
 .regform {
@@ -142,7 +142,7 @@ textarea:focus,
 	.regform input[type="tel"],
 	.regform input[type="date"],
 	textarea,
-	.regform input[type="password"] {
+	.regform input[type="password"], .regform input[type="number"],#typee {
 		width: 400px;
 
 		color: #000 !important;
@@ -160,7 +160,7 @@ textarea:focus,
 	.regform {
 		margin-top: 10px;
 
-		background-image: url(/Saada-Hack/assets/images/register.jpg);
+		background-image: url(/assets/images/register.jpg);
 	}
 	.regform input[type="radio"] {
 		margin-left: 40px !important;
@@ -178,7 +178,7 @@ textarea:focus,
 	.regform input[type="tel"],
 	.regform input[type="date"],
 	textarea,
-	.regform input[type="password"] {
+	.regform input[type="password"], .regform input[type="number"] ,#typee{
 		width: 80vw;
 		margin-left: 3%;
 		color: #000 !important;
@@ -203,7 +203,7 @@ textarea:focus,
 	.regform input[type="tel"],
 	.regform input[type="date"],
 	textarea,
-	.regform input[type="password"] {
+	.regform input[type="password"], .regform input[type="number"],#typee,#reglab {
 		width: 40vw;
 		margin-left: 3%;
 		color: #000 !important;
