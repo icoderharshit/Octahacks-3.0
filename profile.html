@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+  <title></title>
+  <link rel="stylesheet" href="./assets/css/profile.css">
+</head>
+
+<body>
+  <h1>Profile Of User</h1>
+  <section class="container profile-container">
+    <div>
+      <p>Welcome :</p>
+      <p id="displayNameHolder"></p>
+      <div><img id="photoHolder" src="./assets/images/avatar.svg" alt="Profile picture">
+      </div>
+      <button id="logOut">Logout</button>
+      <button id="modifyAccount">Modify Account</button>
+    </div>
+  </section>
+  <script src="https://www.gstatic.com/firebasejs/8.0.0/firebase-app.js"></script>
+  <script src="https://www.gstatic.com/firebasejs/8.0.0/firebase-auth.js"></script>
+  <script src="https://www.gstatic.com/firebasejs/8.0.0/firebase-database.js"></script>
+  <script>
+    var firebaseConfig = {
+      apiKey: "AIzaSyAs5tsHHmTFBKjTRSoJS42OJC13helmTq0",
+      authDomain: "saadahack.firebaseapp.com",
+      databaseURL: "https://saadahack.firebaseio.com",
+      projectId: "saadahack",
+      storageBucket: "saadahack.appspot.com",
+      messagingSenderId: "702033344107",
+      appId: "1:702033344107:web:01424d2231f7671e30632e",
+      measurementId: "G-D6K461P8SK"
+    };
+    firebase.initializeApp(firebaseConfig);
+  </script>
+  <script type="text/javascript">
+
+    var userId = localStorage.getItem('id');
+    firebase.database().ref('Users/' + userId).on('value', function (snapshot) {
+      var name = (snapshot.val() && snapshot.val().FirstName) + " " + (snapshot.val() && snapshot.val().LastName);
+      console.log(snapshot.val())
+      //  var tele=(snapshot.val() && snapshot.val().Phone);
+      //  var address=(snapshot.val() && snapshot.val().Address);
+      //  var gender=(snapshot.val() && snapshot.val().Gender);
+      //  var city=(snapshot.val() && snapshot.val().City);
+      //  var state=(snapshot.val() && snapshot.val().State);
+      //  var dob=(snapshot.val() && snapshot.val().DOB);
+      document.getElementById('displayNameHolder').innerHTML = name;
+      //  document.getElementById('lname').innerHTML=lname;
+      //  document.getElementById('phone').innerHTML=tele;
+      //  document.getElementById('address').innerHTML=address;
+      //  document.getElementById('gender').innerHTML=gender;
+      //  document.getElementById('city').innerHTML=city;
+      //  document.getElementById('state').innerHTML=state;
+      //  document.getElementById('dob').innerHTML=dob;
+    });
+    const auth = firebase.auth();
+    const logOut = document.getElementById('logOut');
+    logOut.addEventListener('click', () => {
+
+      auth.signOut()
+        .then(() => {
+          window.location.assign('/Saada-Hack/signin.html');
+        })
+        .catch(error => {
+          console.error(error);
+        })
+    })
+    auth.onAuthStateChanged(user => {
+      console.log(user);
+      //display the displayName and photoURL of the user on the page
+      if (user.displayName)
+        displayNameHolder.innerHTML = user.displayName;
+      if (user.photoURL)
+        photoHolder.setAttribute('src', user.photoURL);
+    })
+    modifyAccount.addEventListener('click', () => {
+      window.location.assign('./edit.html');
+    });
+  </script>
+
+</body>
+
+</html>
