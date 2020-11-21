@@ -1,0 +1,68 @@
+.profile-container {
+	margin: 0 auto;
+}
+.profile-image {
+	width: 150px;
+	margin: 0 auto;
+}
+.profile-card-container {
+	align-content: space-between;
+}
+.profile-card-container .row {
+	justify-content: space-between;
+}
+.prescription {
+	margin-top: 100px;
+}
+.about-heading.sample {
+	margin: 100px auto;
+}
+.buttonGroup {
+	display: flex;
+	margin-top: 50px;
+	margin-bottom: 100px;
+	justify-content: center;
+}
+.buttonGroup button {
+	margin: 0 20px;
+}
+.card.mb-3 {
+	margin-bottom: 0 !important;
+}
+.popup {
+	position: absolute;
+	transform: translate(-50%, -50%);
+	top: 50%;
+	left: 50%;
+	z-index: 100;
+	background-color: rgba(0, 0, 0, .3);
+	width: 100vw;
+	height: 100vw;
+}
+.popup .container {
+	position: absolute;
+	transform: translate(-50%, -50%);
+	top: 50%;
+	left: 50%;
+	background-color: white;
+	padding: 100px;
+	max-width: 500px;
+	border-radius: 5px;
+}
+.pop {
+	display: block;
+	margin: 0 auto;
+	text-align: center;
+}
+.hidden {
+	display: none;
+}
+label.pop {
+	font-size: 22px;
+	margin-bottom: 10px;
+}
+input.pop {
+	width: 50%;
+	max-width: 380px;
+	margin-bottom: 30px;
+}

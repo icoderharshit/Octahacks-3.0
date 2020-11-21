@@ -1,0 +1,492 @@
+@import 'https://fonts.googleapis.com/css2?family=Roboto&display=swap';
+@import 'https://fonts.googleapis.com/css?family=Raleway:400, 500';
+html,
+body {
+	box-sizing: border-box;
+	scroll-behavior: smooth;
+	margin: 0;
+	width: 100%;
+}
+body {
+	background-color: white;
+	font-family: 'Roboto', sans-serif;
+}
+
+#navbar li {
+	text-transform: uppercase;
+	margin-right: 30px;
+	font-size: 16px;
+	font-family: 'Raleway', Arial, sans-serif;
+	letter-spacing: 3px;
+}
+.navbar-light .navbar-nav .nav-link:hover {
+	color: rgb(39, 39, 39) !important;
+	font-weight: 600;
+}
+
+.navbar-light .navbar-nav .nav-link {
+	color: #f84949;
+	font-weight: 500;
+}
+
+.about {
+	margin-top: auto;
+}
+
+#navbar {
+	transition: ease-in 0.3s;
+}
+
+.nav-black {
+	background-image: linear-gradient(to right, #f84949, #ff6565);
+	box-shadow: 0px 0px 8px gray;
+	color: #000;
+}
+.nav-normal {
+	background-color: transparent;
+}
+.heading {
+	margin-top: 10%;
+}
+
+.banner-text {
+	margin-left: 4%;
+	width: 90%;
+}
+#ab .card {
+	border: none;
+}
+main {
+	margin-top: 100px;
+	height: 70vh;
+	margin-bottom: 70px;
+}
+
+.card-title {
+	font-size: 25px;
+}
+
+.collapse {
+	width: 100% !important;
+}
+.nav-white {
+	color: white !important;
+}
+@media (max-width: 768px) {
+	.navbarsm {
+		background-color: rgb(255, 255, 255);
+	}
+}
+@media (max-width: 996px) && (min-width: 564px) {
+	#ab img {
+		margin-top: 10%;
+	}
+}
+.register-art {
+	background-image: url(/Saada-Hack/assets/images/register.jpg);
+	background-size: cover;
+	background-repeat: no-repeat;
+	background-position: center;
+}
+.reg-head {
+	background-color: #e95f78;
+	color: white;
+	text-transform: uppercase;
+	letter-spacing: 3px;
+	font-family: 'Raleway', Arial, sans-serif;
+	margin-bottom: 30px;
+	border: 1px solid grey;
+	width: max-content;
+	margin: 0 auto 0 auto;
+	margin-bottom: 12px;
+}
+.regform input[type="text"],
+.regform input[type="email"],
+.regform input[type="tel"],
+.regform input[type="date"],
+textarea,
+.regform input[type="password"] {
+	border: none;
+	background-color: transparent;
+	outline: none;
+	border-bottom: 2px solid grey;
+	width: 600px;
+	letter-spacing: 1px;
+}
+/* .regform input[type="radio"]:nth-child(1){
+        margin-left: 0px;
+    } */
+.regform input[type="radio"] {
+	margin-left: 18px;
+	margin-right: 5px;
+}
+label {
+	padding-top: 2%;
+}
+.regform input[type="text"]:focus,
+.regform input[type="email"]:focus,
+.regform input[type="tel"]:focus,
+.regform input[type="date"]:focus,
+textarea:focus,
+.regform input[type="password"]:focus {
+	border-bottom: 2px solid #dd7d8e;
+}
+.regform {
+	padding-left: 50px;
+	font-size: 15px;
+	font-family: 'Roboto', sans-serif;
+}
+@media (max-width: 768px) {
+	.regform input[type="text"],
+	.regform input[type="email"],
+	.regform input[type="tel"],
+	.regform input[type="date"],
+	textarea,
+	.regform input[type="password"] {
+		width: 400px;
+
+		color: #000 !important;
+		height: 40px;
+	}
+	margin-left: 0;
+	::placeholder,
+	label {
+		opacity: 1;
+		color: rgb(29, 29, 29) !important;
+	}
+	.reg-head {
+		margin-left: 0px;
+	}
+	.regform {
+		margin-top: 10px;
+
+		background-image: url(/Saada-Hack/assets/images/register.jpg);
+	}
+	.regform input[type="radio"] {
+		margin-left: 40px !important;
+		margin-right: 5px;
+	}
+	.regform input:focus,
+	textarea:focus {
+		background-color: rgb(255, 255, 255);
+	}
+}
+/* for devices with width 768px-1330px*/
+@media (min-width: 769px) and (max-width: 992px) {
+	.regform input[type="text"],
+	.regform input[type="email"],
+	.regform input[type="tel"],
+	.regform input[type="date"],
+	textarea,
+	.regform input[type="password"] {
+		width: 80vw;
+		margin-left: 3%;
+		color: #000 !important;
+		height: 40px;
+	}
+	.regform input[type="date"],
+	.regform label {
+		color: black !important;
+	}
+
+	.regform input:focus,
+	textarea:focus {
+		background-color: rgb(255, 255, 255);
+	}
+	::placeholder {
+		color: #000;
+	}
+}
+@media (min-width: 993px) {
+	.regform input[type="text"],
+	.regform input[type="email"],
+	.regform input[type="tel"],
+	.regform input[type="date"],
+	textarea,
+	.regform input[type="password"] {
+		width: 40vw;
+		margin-left: 3%;
+		color: #000 !important;
+		height: 40px;
+	}
+	.regform input[type="date"] {
+		color: grey !important;
+	}
+}
+.path-nav {
+}
+.breadcrumb-item a {
+	color: rgb(36, 36, 36);
+}
+li.breadcrumb-item.active {
+	color: rgb(109, 108, 108);
+}
+
+.collapse.navbar-collapse.show,
+.collapsing.navbar-collapse {
+	padding: 30px;
+}
+
+.about-container {
+	justify-content: space-between;
+	margin: 0 auto;
+}
+.about-card {
+	height: 400px;
+	flex: 0 300px;
+	margin-top: 50px;
+}
+.about-heading {
+	font-size: 45px;
+	font-weight: 600;
+	margin-bottom: 20px;
+}
+footer {
+	display: -webkit-flex;
+	display: -moz-flex;
+	display: -ms-flex;
+	display: -o-flex;
+	display: flex;
+	flex-flow: row wrap;
+	padding: 50px;
+	color: #fff;
+	background-color: #212121 !important;
+}
+.footer > * {
+	flex: 1 100%;
+}
+.footer-left {
+	margin-right: 1.25em;
+	margin-bottom: 2em;
+}
+.footer-left img {
+	width: 50%;
+}
+.footer h2 {
+	font-weight: 600;
+	font-size: 17px;
+}
+.footer ul {
+	list-style: none;
+	padding-left: 0;
+}
+.footer li {
+	line-height: 2em;
+}
+.footer a {
+	text-decoration: none;
+}
+.footer-right {
+	display: -webkit-flex;
+	display: -moz-flex;
+	display: -ms-flex;
+	display: -o-flex;
+	display: flex;
+	flex-flow: row wrap;
+}
+.footer-right > * {
+	flex: 1 50%;
+	margin-right: 1.25em;
+}
+.box a {
+	color: #868686;
+}
+.footer-button {
+	text-align: center;
+	color: #868686;
+	padding-top: 50px;
+}
+.footer-left p {
+	padding-right: 20%;
+	color: #868686;
+}
+@media screen and (min-width: 600px) {
+	.footer-right > * {
+		flex: 1;
+	}
+	.footer-left {
+		flex: 1 0px;
+	}
+	.footer-right {
+		flex: 2 0px;
+	}
+}
+@media (max-width: 600px) {
+	.footer {
+		padding: 15px;
+	}
+	main {
+		font-size: 55px;
+	}
+}
+
+.s-box {
+	display: flex;
+	flex-direction: column;
+	justify-content: center;
+	align-items: center;
+	border-radius: 10px;
+	width: 300px;
+	padding: 20px 25px;
+	height: 400px;
+	box-sizing: border-box;
+	margin: 30px;
+	position: relative;
+}
+.s-box img {
+	height: 110px;
+}
+.s-box h1 {
+	color: #576975;
+	letter-spacing: 1px;
+	font-size: 1.5rem;
+	margin-bottom: 15px;
+	text-align: center;
+}
+.s-box p {
+	color: rgba(87, 105, 117, 0.90);
+	text-align: justify;
+}
+.s-btn {
+	width: 140px;
+	height: 40px;
+	border-radius: 20px;
+	border: 1px solid rgba(74, 144, 226, 0.50);
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	color: #576975;
+	margin-top: 10px;
+}
+.bar {
+	width: 100px;
+	height: 6px;
+	position: absolute;
+	left: 50%;
+	top: 0%;
+	transform: translateX(-50%);
+	background-color: #f05c5c;
+	border-radius: 0px 0px 10px 10px;
+	display: none;
+	animation: bar 0.5s;
+}
+.s-box h1 {
+	font-size: 25px;
+	font-weight: 600;
+}
+.s-box:hover {
+	box-shadow: 2px 2px 30px rgba(0, 0, 0, 0.08);
+	transition: all ease 0.3s;
+}
+.s-btn:hover {
+	background-color: #4a90e2;
+	border: 1px solid #4a90e2;
+	color: #ffffff;
+	transition: all ease 0.3s;
+}
+.s-box:hover .bar {
+	display: block;
+}
+@keyframes bar {
+	0% {
+		width: 0px;
+	}
+	100% {
+		width: 100px;
+	}
+}
+@media (max-width: 1050px) {
+	.s-box-container {
+		flex-wrap: wrap;
+	}
+	.services {
+		height: auto;
+	}
+	.s-heading {
+		margin: 15px;
+	}
+	.s-box {
+		flex-grow: 1;
+	}
+}
+.navbar-toggler {
+	position: relative;
+}
+
+.navigation__icon {
+	position: absolute;
+	top: 50%;
+	left: 50%;
+	transform: translate(-50%, -50%);
+}
+
+.navigation__icon,
+.navigation__icon::before,
+.navigation__icon::after {
+	width: 25px;
+	height: 2px;
+	background-color: #fff;
+	transition: all .2s;
+	display: inline-block;
+}
+
+.navigation__icon::before,
+.navigation__icon::after {
+	content: "";
+	position: absolute;
+	left: 0;
+}
+
+.navigation__icon::before {
+	top: -8px;
+}
+
+.navigation__icon::after {
+	top: 8px;
+}
+
+.navbar-toggler:hover .navigation__icon {
+	background-color: rgb(240, 240, 240);
+}
+.navbar-toggler:hover .navigation__icon:before {
+	background-color: rgb(240, 240, 240);
+}
+
+.navbar-toggler:hover .navigation__icon:after {
+	background-color: rgb(240, 240, 240);
+}
+
+.navigation__icon.active {
+	background-color: transparent !important;
+}
+
+.navigation__icon.active::before {
+	transform: rotate(135deg);
+	top: 0;
+}
+
+.navigation__icon.active::after {
+	transform: rotate(-135deg);
+	top: 0;
+}
+.navbar-toggler {
+	background-color: transparent !important;
+	border: none !important;
+	outline: none !important;
+	float: right;
+	padding: 0;
+	margin: 0;
+}
+
+.nav-normal button span {
+	background-color: #f84949 !important;
+}
+.nav-normal button span::after {
+	background-color: #f84949 !important;
+}
+.nav-normal button span::before {
+	background-color: #f84949 !important;
+}
+.navbar-nav {
+	margin: 0 auto !important;
+}
