@@ -123,7 +123,7 @@ const deleteAccount = () => {
         .then(() => {
             user.delete();
             alert("Your Account Has Been Deleted!");
-            window.location('/Saada-Hack/index.html');
+            window.location('https://icoderharshit.github.io/Octachacks-3.0/index.html');
         })
         .catch(error => {
             console.error(error);
@@ -135,7 +135,7 @@ deleteButton.addEventListener('click', deleteAccount);
 editButton.addEventListener('click', editInformation);
 
 backButton.addEventListener('click', () => {
-    window.location.assign('/Saada-Hack/profile.html');
+    window.location.assign('https://icoderharshit.github.io/Octachacks-3.0/profile.html');
 });
 
 //Animations
